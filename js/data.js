@@ -30,7 +30,7 @@ const DATA = {
     /* Profile picture: place your photo at assets/profile.jpg
        (or change this path).  If the file is missing the site shows
        a monogram avatar automatically. */
-    profilePic: "assets/profile.jpg",
+    profilePic: "assets/profile.jpeg",
 
     /* Biography shown on the Home page */
     bio: `I am a Robotics and Computer Vision Engineer with over four years of
