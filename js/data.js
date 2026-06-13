@@ -22,7 +22,7 @@ const DATA = {
     email:      "c.soham99.official@gmail.com",
 
     /* Social / profile links — set to "" to hide the button */
-    linkedin:   "https://www.linkedin.com/in/soham-chattopadhyay/",   // ← update
+    linkedin:   "https://www.linkedin.com/in/soham-chattopadhyay-8bab441b0/",   // ← update
     github:     "https://github.com/SohamChattopadhyayEE",
     leetcode:   "",   // ← add your LeetCode URL
     cv:         "assets/cv.pdf",                // ← drop your CV here
