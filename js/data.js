@@ -90,12 +90,12 @@ SLAM, and data-efficient robot learning in unstructured environments.`
   /* Each item: { title, description, tags[], link, image, date } */
   projects: [
     {
-      title:       "Visual-Inertial Navigation System (VINS)",
-      date:        "2024 – Present",
+      title:       "Simulator development for RL-based navigation task",
+      date:        "2026",
       description: "Developed a tightly-coupled stereo visual-inertial odometry system using IMU pre-integration and non-linear optimisation (Ceres Solver). Benchmarked against EuRoC and custom warehouse datasets.",
       tags:        ["ROS 2", "C++", "SLAM", "IMU", "Ceres Solver"],
       link:        "",
-      image:       ""
+      image:       "assets/projects/light_weight_sim_for_rl.gif"
     },
     {
       title:       "RL-Based Autonomous Mobile Robot Navigation",
