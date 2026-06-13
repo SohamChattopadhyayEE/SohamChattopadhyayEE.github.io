@@ -128,6 +128,15 @@ SLAM, and data-efficient robot learning in unstructured environments.`
      type: "journal" | "conference" | "preprint"                           */
   publications: [
     {
+      title:    "Mapping Functional Changes in the Embryonic Heart of Atlantic Salmon Post Viral Infection Using AI Technique",
+      authors:  "Soham Chattopadhyay, et al.",  // ← fill in full co-author list from the paper
+      venue:    "IEEE International Conference on Image Processing (ICIP)",
+      year:     "2023",
+      abstract: "Addresses detection of viral infection in Atlantic salmon by analysing videos of beating embryonic hearts. Converts video data into heart-area time-signals, derives spectrogram features, and applies an ensemble of deep learning classifiers — achieving 82% average accuracy in distinguishing infected from healthy embryonic hearts.",
+      link:     "https://ieeexplore.ieee.org/document/9897203/",
+      type:     "conference"
+    },
+    {
       title:    "Deep feature selection using adaptive β-Hill Climbing aided whale optimization algorithm for lung and colon cancer detection",
       authors:  "Agnish Bhattacharya, Biswajit Saha, Soham Chattopadhyay, Ram Sarkar",
       venue:    "Biomedical Signal Processing and Control",
@@ -232,13 +241,13 @@ SLAM, and data-efficient robot learning in unstructured environments.`
   /* Each item: { title, inventors, number, status, year, description, link } */
   patents: [
     {
-      title:      "Vision-Based Autonomous Docking System for Warehouse Mobile Robots",
-      inventors:  "Soham Chattopadhyay, et al.",
+      title:      "System and Method for Context-Aware and Priority-Driven Projection Area Selection in Multi-user Environment",
+      inventors:  "Soham Chattopadhyay, et al., Yogesh Kumar, Sumit Aggarwal, Asif Jama",
       number:     "Application filed — number pending",
       status:     "Filed",
-      year:       "2026",
-      description:"A system and method for precisely docking an autonomous mobile robot to a charging station or load port using fiducial marker detection and a model-predictive feedback controller.",
-      link:       ""
+      year:       "2024",
+      description:"A system and method for detecting optimal surface for projection in multi-spectator environment.",
+      link:       "https://drive.google.com/file/d/1k_DxLyOUV-oJzYu5Nluwau79dX54ZeK-/view?usp=sharing"
     }
   ]
 
