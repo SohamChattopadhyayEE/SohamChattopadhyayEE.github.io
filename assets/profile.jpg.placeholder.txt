@@ -1,0 +1,9 @@
+Place your profile photo here as:  assets/profile.jpg
+
+Requirements:
+  - File name: profile.jpg  (or profile.png — then update js/data.js accordingly)
+  - Recommended size: at least 300×300 px, ideally square
+  - Format: JPEG or PNG
+
+If this file is absent the site automatically shows a monogram avatar ("SC")
+in a blue gradient circle instead.

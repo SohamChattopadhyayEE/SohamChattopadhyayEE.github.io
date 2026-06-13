@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Patents — Soham Chattopadhyay"/>
+  <title>Patents | Soham Chattopadhyay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <nav id="main-nav"></nav>
+
+  <main>
+    <div class="page-header">
+      <h1>Patents</h1>
+      <p>Intellectual property filings and granted patents.</p>
+    </div>
+    <div id="patents-list"></div>
+  </main>
+
+  <div id="main-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
+  <script>
+    buildNav();
+    buildFullList({
+      containerId: "patents-list",
+      items:       DATA.patents,
+      renderCard:  patentCard,
+      emptyMsg:    "Patents coming soon."
+    });
+    buildFooter();
+  </script>
+</body>
+</html>
