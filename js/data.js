@@ -49,21 +49,39 @@ SLAM, and data-efficient robot learning in unstructured environments.`
      Set link: "" to omit the "Read more" button. */
   news: [
     {
-      date:        "June 2026",
-      title:       "Manuscript submitted to IROS 2026",
-      description: "Submitted our work on tightly-coupled visual-inertial odometry with learned feature tracking to IEEE/RSJ IROS 2026.",
+      date:        "February 2025",
+      title:       "Joined Addverb Technologies as Research Engineer",
+      description: "Joined Addverb Technologies, a leading robotics and warehouse automation company, as a Research Engineer focusing on perception and autonomous navigation for mobile robots.",
       link:        ""
     },
     {
-      date:        "March 2026",
-      title:       "Patent filed on autonomous docking system",
-      description: "Filed a patent for a vision-based autonomous docking approach for warehouse mobile robots using AprilTag pose estimation.",
+      date:        "September 2024",
+      title:       "Patent filed at Samsung Research",
+      description: "Filed a patent entitled \"System and Method for Context-Aware and Priority-Driven Projection Area Selection in Multi-user Environment\" from Samsung Research Institute India – Delhi.",
       link:        ""
     },
     {
-      date:        "September 2025",
-      title:       "RL-based navigation demo at internal review",
-      description: "Demonstrated a reinforcement-learning navigation agent running fully on-device (edge deployment) at the quarterly research review.",
+      date:        "June 2024",
+      title:       "Returned to Samsung Research India – Delhi",
+      description: "Returned to Samsung Research Institute India – Delhi and resumed the previous role as R&D Engineer after the overseas business trip to Samsung Research Seoul.",
+      link:        ""
+    },
+    {
+      date:        "February 2024",
+      title:       "Business trip to Samsung Research – Seoul",
+      description: "Travelled to Samsung Research headquarters in Seoul, South Korea, for a collaborative R&D engagement and knowledge exchange with the global research team.",
+      link:        ""
+    },
+    {
+      date:        "July 2022",
+      title:       "Joined Samsung Research Institute India – Delhi as R&D Engineer",
+      description: "Began career as an R&D Engineer at Samsung Research Institute India – Delhi, working on cutting-edge research and product development in the areas of computer vision and intelligent systems.",
+      link:        ""
+    },
+    {
+      date:        "May 2022",
+      title:       "Graduated from Jadavpur University",
+      description: "Completed undergraduate studies from Jadavpur University, one of India's premier technical institutions, marking the beginning of a professional journey in robotics and computer vision.",
       link:        ""
     }
   ],
