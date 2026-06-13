@@ -128,13 +128,103 @@ SLAM, and data-efficient robot learning in unstructured environments.`
      type: "journal" | "conference" | "preprint"                           */
   publications: [
     {
-      title:    "Tightly-Coupled Stereo Visual-Inertial Odometry with Learned Feature Tracking",
-      authors:  "S. Chattopadhyay, et al.",
-      venue:    "IEEE/RSJ IROS 2026 (under review)",
-      year:     "2026",
-      abstract: "We propose a tightly-coupled stereo VIO system that replaces handcrafted feature descriptors with a lightweight learned tracker, improving robustness in low-texture and high-dynamic environments.",
+      title:    "Deep feature selection using adaptive β-Hill Climbing aided whale optimization algorithm for lung and colon cancer detection",
+      authors:  "Agnish Bhattacharya, Biswajit Saha, Soham Chattopadhyay, Ram Sarkar",
+      venue:    "Biomedical Signal Processing and Control",
+      year:     "2023",
+      abstract: "Proposes an adaptive β-Hill Climbing aided whale optimization algorithm for automated deep feature selection, applied to histopathological image-based detection of lung and colon cancers.",
       link:     "",
-      type:     "conference"
+      type:     "journal"
+    },
+    {
+      title:    "A feature selection model for speech emotion recognition using clustering-based population generation with hybrid of equilibrium optimizer and atom search optimization algorithm",
+      authors:  "Soham Chattopadhyay, Arijit Dey, Pawan Kumar Singh, Ali Ahmadian, Ram Sarkar",
+      venue:    "Multimedia Tools and Applications, vol. 82(7), pp. 9693–9726",
+      year:     "2023",
+      abstract: "Presents a hybrid meta-heuristic feature selection framework combining equilibrium optimizer and atom search optimization with clustering-based population seeding for robust speech emotion recognition.",
+      link:     "",
+      type:     "journal"
+    },
+    {
+      title:    "Deep features selection through genetic algorithm for cervical pre-cancerous cell classification",
+      authors:  "Rohit Kundu, Soham Chattopadhyay",
+      venue:    "Multimedia Tools and Applications, vol. 82(9), pp. 13431–13452",
+      year:     "2023",
+      abstract: "Employs a genetic algorithm to select discriminative deep features extracted from CNN models for accurate classification of cervical pre-cancerous cells in Pap-smear images.",
+      link:     "",
+      type:     "journal"
+    },
+    {
+      title:    "AltWOA: Altruistic Whale Optimization Algorithm for feature selection on microarray datasets",
+      authors:  "Rohit Kundu, Soham Chattopadhyay, Erik Cuevas, Ram Sarkar",
+      venue:    "Computers in Biology and Medicine, vol. 144",
+      year:     "2022",
+      abstract: "Introduces AltWOA, a biologically-inspired altruistic variant of the whale optimization algorithm, for high-dimensional feature selection on gene-expression microarray datasets.",
+      link:     "",
+      type:     "journal"
+    },
+    {
+      title:    "DRDA-Net: Dense residual dual-shuffle attention network for breast cancer classification using histopathological images",
+      authors:  "Soham Chattopadhyay, Arijit Dey, Pawan Kumar Singh, Ram Sarkar",
+      venue:    "Computers in Biology and Medicine, vol. 145",
+      year:     "2022",
+      abstract: "Proposes DRDA-Net, a novel CNN architecture integrating dense residual connections with a dual-shuffle attention mechanism for accurate and efficient breast cancer grading from histopathological images.",
+      link:     "",
+      type:     "journal"
+    },
+    {
+      title:    "MTRRE-Net: A deep learning model for detection of breast cancer from histopathological images",
+      authors:  "Soham Chattopadhyay, Arijit Dey, Pawan Kumar Singh, Diego Oliva, Erik Cuevas, Ram Sarkar",
+      venue:    "Computers in Biology and Medicine, vol. 150",
+      year:     "2022",
+      abstract: "Presents MTRRE-Net, a multi-scale deep learning architecture leveraging residual and recurrent components for robust detection and classification of breast cancer from whole-slide histopathological images.",
+      link:     "",
+      type:     "journal"
+    },
+    {
+      title:    "Motivation detection using EEG signal analysis by residual-in-residual convolutional neural network",
+      authors:  "Soham Chattopadhyay, Laila Zary, Chai Quek, Dilip K. Prasad",
+      venue:    "Expert Systems with Applications, vol. 184",
+      year:     "2021",
+      abstract: "Develops a residual-in-residual CNN for decoding motivational states from EEG signals, enabling a non-invasive brain–computer interface for affect-aware human–machine interaction.",
+      link:     "",
+      type:     "journal"
+    },
+    {
+      title:    "Ensemble of CNN classifiers using Sugeno Fuzzy Integral Technique for Cervical Cytology Image Classification",
+      authors:  "Rohit Kundu, Hritam Basak, Akhil Koilada, Soham Chattopadhyay, Sukanta Chakraborty, Nibaran Das",
+      venue:    "arXiv preprint arXiv:2108.09460",
+      year:     "2021",
+      abstract: "Proposes an ensemble of CNN classifiers fused via the Sugeno fuzzy integral for multi-class cervical cytology image classification, achieving improved robustness over individual classifiers.",
+      link:     "https://arxiv.org/abs/2108.09460",
+      type:     "preprint"
+    },
+    {
+      title:    "A Hybrid Meta-Heuristic Feature Selection Method Using Golden Ratio and Equilibrium Optimization Algorithms for Speech Emotion Recognition",
+      authors:  "Arijit Dey, Soham Chattopadhyay, Pawan Kumar Singh, Ali Ahmadian, Massimiliano Ferrara, Ram Sarkar",
+      venue:    "IEEE Access, vol. 8, pp. 200953–200970",
+      year:     "2020",
+      abstract: "Presents a hybrid meta-heuristic combining golden ratio search and equilibrium optimization for feature selection in speech emotion recognition, validated on standard benchmark datasets.",
+      link:     "",
+      type:     "journal"
+    },
+    {
+      title:    "Multi-scale Attention U-Net (MsAUNet): A Modified U-Net Architecture for Scene Segmentation",
+      authors:  "Soham Chattopadhyay, Hritam Basak",
+      venue:    "arXiv preprint arXiv:2009.06911",
+      year:     "2020",
+      abstract: "Introduces MsAUNet, a multi-scale attention-augmented U-Net variant for semantic scene segmentation, combining skip connections with spatial attention gates to improve boundary delineation.",
+      link:     "https://arxiv.org/abs/2009.06911",
+      type:     "preprint"
+    },
+    {
+      title:    "Optimizing Speech Emotion Recognition using Manta-Ray Based Feature Selection",
+      authors:  "Soham Chattopadhyay, Arijit Dey, Hritam Basak",
+      venue:    "arXiv preprint arXiv:2009.08909",
+      year:     "2020",
+      abstract: "Applies manta-ray foraging optimization as a wrapper-based feature selector for speech emotion recognition, reducing feature dimensionality while improving classification accuracy.",
+      link:     "https://arxiv.org/abs/2009.08909",
+      type:     "preprint"
     }
   ],
 
