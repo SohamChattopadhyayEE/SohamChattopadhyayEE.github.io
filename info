@@ -1,0 +1,30 @@
+# Context
+I am a PhD aspirant and planning to apply for PhD in fall 2027. Also, I have around four years of experience in robotics and computer vision.
+This project is for a brief portfolio website for me, that I want to host on `github.io` highlighting my projects, works, publications and patents.
+
+# Requirements
+1. It should be easy to maintain
+2. A brief summary should be there, which would include my career aspiration and work experience in brief.
+3. Adding up projects and works should be easy.
+4. Adding visuals should also be easy.
+5. I want one of my profile picture as well.
+6. All of the following information should be added and modified seamlessly-
+    1. CV
+    2. Linkedin contact info
+    3. github account
+    4. coding profiles (like leetcode)
+
+
+# Specifications
+1. There should not be too many pages:
+    1. One `Home` page: In the home page, there should be
+        - The profile picture should be at the top middle of the home page.
+        - Below the profile picture, a brief `biography` section should be there.
+        - Then then `News` column in the middle with a scroll bar. In the window there should be at most two news.
+        - one `Projects` column after the `News` column. This too will have a scroll bar. There should be at most two projects in the window.
+        - After the `Projects` column, the `Publications` section should displayed. The this should also be similar to `Projects` and `News`.
+        - At the end, the `Patents` section should be placed
+    2.  Every columns of the `Home` page, should redirect to it's own page. For example, if one clicks on the `News` column, he or she should be redirected to the corresponding page, where all news and everything should be displayed.
+    3. There should be a simple column at the top of the webpage where all the columns should be shown, such as `Home`, `News`, `Papers`, `Projects`, `Publications` and so on.
+2. It should be simple enough
+
