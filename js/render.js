@@ -144,13 +144,15 @@ function projectCard(item) {
     : "";
 
   return `
-    <div class="card">
-      ${img}
-      <div class="card-meta">${item.date || ""}</div>
-      <h3>${item.title}</h3>
-      <p>${item.description}</p>
-      <div class="tags">${(item.tags || []).map(t => `<span class="tag">${t}</span>`).join("")}</div>
-      ${link}
+    <div class="card project-card">
+      <div class="project-card-image">${img}</div>
+      <div class="project-card-body">
+        <div class="card-meta">${item.date || ""}</div>
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+        <div class="tags">${(item.tags || []).map(t => `<span class="tag">${t}</span>`).join("")}</div>
+        ${link}
+      </div>
     </div>`;
 }
 
