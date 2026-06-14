@@ -90,36 +90,36 @@ SLAM, and data-efficient robot learning in unstructured environments.`
   /* Each item: { title, description, tags[], link, image, date } */
   projects: [
     {
-      title:       "Simulator Development for RL-based Navigation Task",
-      date:        "2026",
-      description: "Developed a tightly-coupled stereo visual-inertial odometry system using IMU pre-integration and non-linear optimisation (Ceres Solver). Benchmarked against EuRoC and custom warehouse datasets.",
-      tags:        ["ROS 2", "C++", "SLAM", "IMU", "Ceres Solver"],
-      link:        "",
-      image:       "assets/projects/light_weight_sim_for_rl.gif"
-    },
-    {
       title:       "RL-Based Docking",
       date:        "2025 – Present",
-      description: "Trained a Soft Actor-Critic (SAC) agent for goal-conditioned navigation in cluttered environments. Deployed on a real AMR using a lightweight ONNX model with a custom ROS 2 interface.",
-      tags:        ["Reinforcement Learning", "SAC", "ROS 2", "ONNX", "Python"],
+      description: "An RL-based docking module, which works seamlessly across different docking stations with an accuracy of 5mm",
+      tags:        ["Reinforcement Learning", "PPO", "ROS", "ONNX", "Python", "C++"],
       link:        "",
       image:       "assets/projects/rl_based_docking.gif"
     },
     {
-      title:       "AprilTag-Based Autonomous Docking",
+      title:       "Object-shape Reactive Wrapping Algorithm",
       date:        "2025",
-      description: "End-to-end docking pipeline for warehouse AMRs using fiducial marker pose estimation, PID control, and a custom state machine. Achieved sub-centimetre repeatability.",
-      tags:        ["Computer Vision", "AprilTag", "PID", "ROS 2", "C++"],
+      description: "End-to-end object-shape agnostic wrapping algorithm which wraps around any non-uniform objects maintaining a fixed distance and uniform velocity.",
+      tags:        ["Computer Vision", "PID", "ROS"],
       link:        "",
       image:       "assets/projects/atlanta-original-compressed.gif"
     },
     {
-      title:       "Semantic Mapping with Object Detection",
-      date:        "2024",
-      description: "Integrated YOLOv8 with a LiDAR-based occupancy grid to build semantic maps of warehouse shop floors, enabling object-class-aware path planning.",
-      tags:        ["YOLO", "LiDAR", "Python", "ROS 2", "Semantic Mapping"],
+      title:       "Simulator Development for RL-based Navigation Task",
+      date:        "2026",
+      description: "Developed a light-weight simulator for RL-based training which leverages the physics of Mujoco environment and can be integrated seamlessly with Stable-baseline3 library",
+      tags:        ["Python", "Reinforcement Learning", "Mujoco", "Stable-baseline3"],
       link:        "",
-      image:       ""
+      image:       "assets/projects/light_weight_sim_for_rl.gif"
+    },
+    {
+      title:       "Tag-based Odometry Estimation",
+      date:        "2025",
+      description: "An independent odometry estimation from Apriltags which works in accordance with other modalities, improving the overall estimation.",
+      tags:        ["Ceres", "Optimization", "State estimation", "AprilTag"],
+      link:        "",
+      image:       "assets/projects/tag_odom.gif"
     }
   ],
 
