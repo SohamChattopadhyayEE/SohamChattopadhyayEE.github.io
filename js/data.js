@@ -111,7 +111,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       description: "End-to-end docking pipeline for warehouse AMRs using fiducial marker pose estimation, PID control, and a custom state machine. Achieved sub-centimetre repeatability.",
       tags:        ["Computer Vision", "AprilTag", "PID", "ROS 2", "C++"],
       link:        "",
-      image:       ""
+      image:       "assets/projects/atlanta-original-compressed.gif"
     },
     {
       title:       "Semantic Mapping with Object Detection",
