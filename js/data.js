@@ -90,7 +90,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
   /* Each item: { title, description, tags[], link, image, date } */
   projects: [
     {
-      title:       "Simulator development for RL-based navigation task",
+      title:       "Simulator Development for RL-based Navigation Task",
       date:        "2026",
       description: "Developed a tightly-coupled stereo visual-inertial odometry system using IMU pre-integration and non-linear optimisation (Ceres Solver). Benchmarked against EuRoC and custom warehouse datasets.",
       tags:        ["ROS 2", "C++", "SLAM", "IMU", "Ceres Solver"],
@@ -98,12 +98,12 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       image:       "assets/projects/light_weight_sim_for_rl.gif"
     },
     {
-      title:       "RL-Based Autonomous Mobile Robot Navigation",
+      title:       "RL-Based Docking",
       date:        "2025 – Present",
       description: "Trained a Soft Actor-Critic (SAC) agent for goal-conditioned navigation in cluttered environments. Deployed on a real AMR using a lightweight ONNX model with a custom ROS 2 interface.",
       tags:        ["Reinforcement Learning", "SAC", "ROS 2", "ONNX", "Python"],
       link:        "",
-      image:       ""
+      image:       "assets/projects/rl_based_docking.gif"
     },
     {
       title:       "AprilTag-Based Autonomous Docking",
