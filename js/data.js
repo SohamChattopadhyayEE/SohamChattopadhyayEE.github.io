@@ -90,6 +90,14 @@ SLAM, and data-efficient robot learning in unstructured environments.`
   /* Each item: { title, description, tags[], link, image, date } */
   projects: [
     {
+      title:       "Follow-Me Feature For Samsung-Ballie",
+      date:        "2024",
+      description: "Developed the Follow-me feature for Samsung's home companion named Ballie. The same has been demonstrated in IFA'24, Berlin.",
+      tags:        ["Computer Vision", "ONNX", "Python", "C++"],
+      link:        "",
+      image:       "assets/projects/human_following_ballie.gif"
+    },
+    {
       title:       "RL-Based Docking",
       date:        "2025 – Present",
       description: "An RL-based docking module, which works seamlessly across different docking stations with an accuracy of 5mm",
