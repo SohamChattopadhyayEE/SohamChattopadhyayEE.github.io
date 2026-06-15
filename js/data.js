@@ -139,7 +139,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       title:    "Mapping Functional Changes in the Embryonic Heart of Atlantic Salmon Post Viral Infection Using AI Technique",
       authors:  "Soham Chattopadhyay, et al.",  // ← fill in full co-author list from the paper
       venue:    "IEEE International Conference on Image Processing (ICIP)",
-      year:     "2023",
+      year:     "2022",
       abstract: "Addresses detection of viral infection in Atlantic salmon by analysing videos of beating embryonic hearts. Converts video data into heart-area time-signals, derives spectrogram features, and applies an ensemble of deep learning classifiers — achieving 82% average accuracy in distinguishing infected from healthy embryonic hearts.",
       link:     "https://ieeexplore.ieee.org/document/9897203/",
       type:     "conference"
@@ -150,7 +150,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       venue:    "Biomedical Signal Processing and Control",
       year:     "2023",
       abstract: "Proposes an adaptive β-Hill Climbing aided whale optimization algorithm for automated deep feature selection, applied to histopathological image-based detection of lung and colon cancers.",
-      link:     "",
+      link:     "https://www.sciencedirect.com/science/article/abs/pii/S1746809423001258",
       type:     "journal"
     },
     {
@@ -159,7 +159,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       venue:    "Multimedia Tools and Applications, vol. 82(7), pp. 9693–9726",
       year:     "2023",
       abstract: "Presents a hybrid meta-heuristic feature selection framework combining equilibrium optimizer and atom search optimization with clustering-based population seeding for robust speech emotion recognition.",
-      link:     "",
+      link:     "https://link.springer.com/article/10.1007/s11042-021-11839-3",
       type:     "journal"
     },
     {
@@ -168,7 +168,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       venue:    "Multimedia Tools and Applications, vol. 82(9), pp. 13431–13452",
       year:     "2023",
       abstract: "Employs a genetic algorithm to select discriminative deep features extracted from CNN models for accurate classification of cervical pre-cancerous cells in Pap-smear images.",
-      link:     "",
+      link:     "https://link.springer.com/article/10.1007/s11042-022-13736-9",
       type:     "journal"
     },
     {
@@ -177,7 +177,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       venue:    "Computers in Biology and Medicine, vol. 144",
       year:     "2022",
       abstract: "Introduces AltWOA, a biologically-inspired altruistic variant of the whale optimization algorithm, for high-dimensional feature selection on gene-expression microarray datasets.",
-      link:     "",
+      link:     "https://www.sciencedirect.com/science/article/abs/pii/S001048252200141X",
       type:     "journal"
     },
     {
@@ -186,7 +186,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       venue:    "Computers in Biology and Medicine, vol. 145",
       year:     "2022",
       abstract: "Proposes DRDA-Net, a novel CNN architecture integrating dense residual connections with a dual-shuffle attention mechanism for accurate and efficient breast cancer grading from histopathological images.",
-      link:     "",
+      link:     "https://www.sciencedirect.com/science/article/abs/pii/S0010482522002293",
       type:     "journal"
     },
     {
@@ -195,7 +195,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       venue:    "Computers in Biology and Medicine, vol. 150",
       year:     "2022",
       abstract: "Presents MTRRE-Net, a multi-scale deep learning architecture leveraging residual and recurrent components for robust detection and classification of breast cancer from whole-slide histopathological images.",
-      link:     "",
+      link:     "https://www.sciencedirect.com/science/article/abs/pii/S0010482522008630",
       type:     "journal"
     },
     {
@@ -204,7 +204,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       venue:    "Expert Systems with Applications, vol. 184",
       year:     "2021",
       abstract: "Develops a residual-in-residual CNN for decoding motivational states from EEG signals, enabling a non-invasive brain–computer interface for affect-aware human–machine interaction.",
-      link:     "",
+      link:     "https://www.sciencedirect.com/science/article/pii/S0957417421009544",
       type:     "journal"
     },
     {
@@ -222,7 +222,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       venue:    "IEEE Access, vol. 8, pp. 200953–200970",
       year:     "2020",
       abstract: "Presents a hybrid meta-heuristic combining golden ratio search and equilibrium optimization for feature selection in speech emotion recognition, validated on standard benchmark datasets.",
-      link:     "",
+      link:     "https://ieeexplore.ieee.org/abstract/document/9247182",
       type:     "journal"
     },
     {
