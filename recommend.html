@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Write a Recommendation — Soham Chattopadhyay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary:      #1e3a5f;
+      --accent:       #2980b9;
+      --accent-light: #d6eaf8;
+      --bg:           #f5f6fa;
+      --surface:      #ffffff;
+      --border:       #e2e5ed;
+      --text:         #2c3e50;
+      --muted:        #7f8c8d;
+      --radius:       10px;
+      --shadow:       0 2px 16px rgba(0,0,0,0.09);
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 2.5rem 1rem 4rem;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 620px;
+    }
+
+    /* Header */
+    .rec-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .rec-avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      box-shadow: 0 4px 14px rgba(41,128,185,0.2);
+      margin-bottom: 0.9rem;
+    }
+    .rec-avatar-fallback {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.9rem;
+      border: 3px solid var(--accent);
+    }
+    .rec-header h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .rec-header p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      line-height: 1.6;
+    }
+
+    /* Card */
+    .rec-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem 2rem;
+      box-shadow: var(--shadow);
+    }
+    .rec-card h2 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-light);
+    }
+
+    /* Form */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-group input,
+    .form-group textarea {
+      padding: 0.55rem 0.8rem;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color 0.18s, background 0.18s;
+      resize: vertical;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: #fff;
+    }
+    .form-group textarea { min-height: 140px; line-height: 1.65; }
+
+    .form-hint {
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.18s;
+    }
+    .submit-btn:hover:not(:disabled) { background: var(--primary); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    /* States */
+    #msg-error, #msg-success, #msg-unconfigured { display: none; }
+
+    .msg-box {
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .msg-box.success {
+      background: #d5f5e3;
+      color: #1e8449;
+      border: 1px solid #a9dfbf;
+    }
+    .msg-box.error {
+      background: #fde8e8;
+      color: #922b21;
+      border: 1px solid #f5c6c6;
+    }
+    .msg-box.warn {
+      background: #fef9e7;
+      color: #784212;
+      border: 1px solid #f9e79f;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.4rem;
+      font-size: 0.84rem;
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Header -->
+  <div class="rec-header">
+    <img id="avatar-img" class="rec-avatar" src="assets/profile.jpeg" alt="Soham Chattopadhyay"
+         onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex';"/>
+    <div id="avatar-fallback" class="rec-avatar-fallback" style="display:none;">SC</div>
+    <h1>Write a Recommendation</h1>
+    <p id="rec-intro">You've been invited by <strong>Soham Chattopadhyay</strong> to write a professional recommendation.<br/>It takes less than two minutes.</p>
+  </div>
+
+  <!-- Form card -->
+  <div class="rec-card" id="form-card">
+    <h2>Your Recommendation</h2>
+
+    <div class="form-group">
+      <label for="f-name">Your full name <span style="color:#e74c3c">*</span></label>
+      <input id="f-name" type="text" placeholder="Dr. Jane Smith" required/>
+    </div>
+
+    <div class="form-group">
+      <label for="f-role">Your current designation <span style="color:#e74c3c">*</span></label>
+      <input id="f-role" type="text" placeholder="Associate Professor, MIT CSAIL" required/>
+    </div>
+
+    <div class="form-group">
+      <label for="f-linkedin">Your LinkedIn profile URL</label>
+      <input id="f-linkedin" type="url" placeholder="https://linkedin.com/in/your-profile"/>
+      <span class="form-hint">Visitors will see a link to verify who you are.</span>
+    </div>
+
+    <div class="form-group">
+      <label for="f-text">Recommendation <span style="color:#e74c3c">*</span></label>
+      <textarea id="f-text" placeholder="Share a few sentences about your experience working with Soham — his technical ability, work ethic, research aptitude, or any qualities that stand out." required></textarea>
+    </div>
+
+    <button class="submit-btn" id="submit-btn" onclick="submitRec()">Submit Recommendation</button>
+
+    <div id="msg-error"        class="msg-box error"></div>
+    <div id="msg-success"      class="msg-box success" style="display:none;">
+      Thank you! Your recommendation has been received. Soham will review it and add it to the portfolio shortly.
+    </div>
+    <div id="msg-unconfigured" class="msg-box warn" style="display:none;">
+      The recommendation form is not yet configured. Please send your recommendation directly to
+      <a href="" id="fallback-email"></a>.
+    </div>
+  </div>
+
+  <a class="back-link" href="recommendations.html">&larr; Back to portfolio</a>
+</div>
+
+<script src="js/data.js"></script>
+<script>
+  /* Pre-fill from URL params */
+  const params = new URLSearchParams(window.location.search);
+  const pName  = params.get("name") || "";
+  const pRole  = params.get("role") || "";
+  if (pName) document.getElementById("f-name").value = pName;
+  if (pRole) document.getElementById("f-role").value = pRole;
+
+  /* Check Formspree config */
+  const formId = (DATA.personal.formspreeId || "").trim();
+  if (!formId) {
+    document.getElementById("submit-btn").style.display = "none";
+    const uc = document.getElementById("msg-unconfigured");
+    uc.style.display = "block";
+    const el = document.getElementById("fallback-email");
+    el.href = `mailto:${DATA.personal.email}`;
+    el.textContent = DATA.personal.email;
+  }
+
+  async function submitRec() {
+    const name     = document.getElementById("f-name").value.trim();
+    const role     = document.getElementById("f-role").value.trim();
+    const linkedin = document.getElementById("f-linkedin").value.trim();
+    const text     = document.getElementById("f-text").value.trim();
+    const errEl    = document.getElementById("msg-error");
+
+    errEl.style.display = "none";
+
+    if (!name || !role || !text) {
+      errEl.textContent = "Please fill in all required fields (name, designation, and recommendation).";
+      errEl.style.display = "block";
+      return;
+    }
+
+    const btn = document.getElementById("submit-btn");
+    btn.disabled = true;
+    btn.textContent = "Submitting…";
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${formId}`, {
+        method:  "POST",
+        headers: { "Accept": "application/json", "Content-Type": "application/json" },
+        body:    JSON.stringify({
+          name,
+          designation: role,
+          linkedin:    linkedin || "(not provided)",
+          recommendation: text,
+          _subject:    `New recommendation from ${name} — Soham Chattopadhyay`
+        })
+      });
+
+      if (res.ok) {
+        document.getElementById("form-card").innerHTML =
+          `<div class="msg-box success" style="display:block;">
+            Thank you, ${name}!<br/><br/>
+            Your recommendation has been received and will be reviewed by Soham shortly.
+            It will appear on the portfolio once added.
+          </div>`;
+      } else {
+        throw new Error("Server error");
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = "Submit Recommendation";
+      errEl.textContent = "Something went wrong — please try again or email Soham directly at " + DATA.personal.email + ".";
+      errEl.style.display = "block";
+    }
+  }
+</script>
+</body>
+</html>

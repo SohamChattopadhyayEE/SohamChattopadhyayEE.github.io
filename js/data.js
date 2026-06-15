@@ -28,6 +28,14 @@ const DATA = {
     leetcode:   "",   // ← add your LeetCode URL
     cv:         "assets/cv.pdf",
 
+    /* Formspree form ID for recommendation submissions.
+       Steps to get one (free):
+         1. Go to https://formspree.io and sign up
+         2. Click "New Form", give it a name, set email to c.soham99.official@gmail.com
+         3. Copy the ID from the endpoint URL  (e.g. "xyzabc12" from formspree.io/f/xyzabc12)
+         4. Paste it below between the quotes.                                         */
+    formspreeId: "",   // ← paste your Formspree form ID here
+
     /* Profile picture: place your photo at assets/profile.jpg
        (or change this path).  If the file is missing the site shows
        a monogram avatar automatically. */

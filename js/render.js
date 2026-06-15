@@ -254,12 +254,17 @@ function buildRecommendationsPage() {
 }
 
 function sendRecRequest() {
-  const name  = document.getElementById("rec-name")?.value.trim()  || "there";
+  const name  = document.getElementById("rec-name")?.value.trim()  || "";
   const email = document.getElementById("rec-email")?.value.trim() || "";
   const role  = document.getElementById("rec-role")?.value.trim()  || "";
   const p     = DATA.personal;
 
-  if (!email) { alert("Please enter the recipient's email address."); return; }
+  if (!name)  { alert("Please enter the recipient's name.");           return; }
+  if (!email) { alert("Please enter the recipient's email address.");  return; }
+
+  /* Build the personalised link to the recommendation form */
+  const base     = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, "");
+  const formLink = `${base}/recommend.html?name=${encodeURIComponent(name)}&role=${encodeURIComponent(role)}`;
 
   const subject = encodeURIComponent(`Recommendation Request — ${p.name}`);
   const body    = encodeURIComponent(
@@ -267,11 +272,13 @@ function sendRecRequest() {
 
 I hope this message finds you well.
 
-I am reaching out to kindly request a professional recommendation or endorsement from you for my academic portfolio website (${p.github ? p.github.replace("github.com/", "github.io/").replace("SohamChattopadhyayEE", "SohamChattopadhyayEE") : "my portfolio"}).
+I am reaching out to kindly request a professional recommendation or endorsement from you for my academic portfolio website.
 
-If you are willing, a few sentences about your experience working with me — my technical skills, work ethic, or research aptitude — would mean a great deal, especially as I prepare my PhD applications for Fall 2027.
+It would take less than two minutes — simply click the link below, fill in a few sentences about your experience working with me, and submit:
 
-Your recommendation will be displayed on my portfolio alongside your LinkedIn profile link and current designation (${role || "your designation"}).
+${formLink}
+
+Your recommendation will be displayed on my portfolio alongside your LinkedIn profile and current designation, and will mean a great deal as I prepare my PhD applications for Fall 2027.
 
 Please feel free to reach out if you have any questions.
 
