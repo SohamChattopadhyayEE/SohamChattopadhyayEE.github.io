@@ -22,10 +22,11 @@ const DATA = {
     email:      "c.soham99.official@gmail.com",
 
     /* Social / profile links — set to "" to hide the button */
-    linkedin:   "https://www.linkedin.com/in/soham-chattopadhyay-8bab441b0/",   // ← update
+    linkedin:   "https://www.linkedin.com/in/soham-chattopadhyay-8bab441b0/",
     github:     "https://github.com/SohamChattopadhyayEE",
+    scholar:    "https://scholar.google.com/citations?user=3pRo5gQAAAAJ&hl=en",
     leetcode:   "",   // ← add your LeetCode URL
-    cv:         "assets/cv.pdf",                // ← drop your CV here
+    cv:         "assets/cv.pdf",
 
     /* Profile picture: place your photo at assets/profile.jpg
        (or change this path).  If the file is missing the site shows

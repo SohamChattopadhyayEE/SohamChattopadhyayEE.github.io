@@ -52,6 +52,7 @@ function buildProfile() {
 
   const socialBtns = [
     p.cv       && `<a class="social-btn" href="${p.cv}" target="_blank">${svgCV()} CV / Résumé</a>`,
+    p.scholar  && `<a class="social-btn" href="${p.scholar}" target="_blank" rel="noopener">${svgScholar()} Google Scholar</a>`,
     p.linkedin && `<a class="social-btn" href="${p.linkedin}" target="_blank" rel="noopener">${svgLinkedIn()} LinkedIn</a>`,
     p.github   && `<a class="social-btn" href="${p.github}" target="_blank" rel="noopener">${svgGitHub()} GitHub</a>`,
     p.leetcode && `<a class="social-btn" href="${p.leetcode}" target="_blank" rel="noopener">${svgCode()} LeetCode</a>`,
@@ -275,4 +276,7 @@ function svgCode() {
 }
 function svgMail() {
   return `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>`;
+}
+function svgScholar() {
+  return `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 9l4 2.18V17c0 1.1 3.13 3 7 3s7-1.9 7-3v-5.82L22 11l-1-2.72L12 3zm0 2.24L19.19 9 12 12.76 4.81 9 12 5.24zM18 15.99c-.08.71-2.66 2.01-6 2.01s-5.92-1.3-6-2V12.9l6 3.28 6-3.28v3.09z"/></svg>`;
 }
