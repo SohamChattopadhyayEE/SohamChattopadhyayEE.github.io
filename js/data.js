@@ -282,7 +282,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       role:        "Engineer — Computer Vision & Robotics",
       start:       "February 2025",
       end:         "Present",
-      description: "Building perception and autonomous navigation systems for warehouse AMRs — including a rotation-invariant contrastive autoencoder for LiDAR compression (100× faster scan matching, 20% CPU saving), an RL-based pallet-docking framework with 5 mm accuracy, and a multi-sensor fusion odometry pipeline combining Camera, LiDAR, IMU, and wheel encoders."
+      description: "I am currently working at Addverb as a robotics software engineer, primarily focusing on developing AI-based solutions for robot-perception. My work involves fusing multi-modal sensor data (LiDAR, Camera, IMU and Wheel encoder) for SLAM and mapping, and creating AI software to enable autonomous navigation, obstacle avoidance, and scene understanding. My primary responsibility includes reading and understanding various research papers across fields like Reinforcement Learning, Generative AI, Scene Segmentation, Object detection, followed by quick prototyping and evaluating on robots. Moreover, I also have to design low-level software architecture, optimize code performance and write production ready clean code (primarily in C++)."
     },
     {
       institution: "Samsung R&D – Delhi (Samsung Research Institute India)",
@@ -290,7 +290,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       role:        "Engineer — Computer Vision & Robotics",
       start:       "July 2022",
       end:         "January 2025",
-      description: "Led computer vision and robotics R&D for Samsung consumer robot products (Robot Vacuum Cleaner and Ballie), delivering an RL-based coverage strategy (+6% coverage), a vision-based Follow-me tracker (97% detection / 92% tracking accuracy), a depth-based probabilistic exploration module (−12% repetition), and a FARL-based automated UI-delay detector flagging 120+ issues daily."
+      description: "In Samsung R&D-Delhi, my role was to develop AI-related software for various Samsung products such as Samsung TV, Samsung robot Ballie (a home companion) and Robot Vacuum Cleaner (RVC). There I delivered two Reinforcement Learning-based software (in Python and PyTorch) to automatically find out and reproduce Memory leaks and User Interface reactivity delays respectively in Samsung TVs. Additionally, I also worked on devising a Deep Contextual-bandit based recommendation system for assigning KONA issues to their respective owners. Moreover, I also worked on developing various features of ballie (an automobile robot), which includes the 'follow-me' feature (This feature was demonstrated in IFA'24), writing the core managing module which establishes the communication between two different computation boards and the 'kidnap detection' feature. Along with that I also was a part of the core research team, where I worked on certain research projects like RL-based adaptive coverage planning for robot vacuum cleaner (RVC). Additionally, I also have worked on one Patent, which is under filing process."
     },
     {
       institution: "UiT — The Arctic University of Norway",
