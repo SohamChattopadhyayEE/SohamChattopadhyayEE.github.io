@@ -83,7 +83,10 @@ function buildBio() {
   if (!el) return;
   el.innerHTML = `
     <div class="bio-section">
-      <h2>Biography</h2>
+      <div class="section-header" style="padding:0; border:none; background:none; margin-bottom:0.85rem;">
+        <h2 style="font-size:1.05rem; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:0.07em;">Biography</h2>
+        <a class="view-all-link" href="biography.html">More &rarr;</a>
+      </div>
       <p>${DATA.personal.bio}</p>
     </div>
   `;
