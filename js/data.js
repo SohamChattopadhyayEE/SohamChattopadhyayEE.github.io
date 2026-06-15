@@ -34,7 +34,7 @@ const DATA = {
          2. Click "New Form", give it a name, set email to c.soham99.official@gmail.com
          3. Copy the ID from the endpoint URL  (e.g. "xyzabc12" from formspree.io/f/xyzabc12)
          4. Paste it below between the quotes.                                         */
-    formspreeId: "",   // ← paste your Formspree form ID here
+    formspreeId: "mrevjkbd",   // ← paste your Formspree form ID here
 
     /* Profile picture: place your photo at assets/profile.jpg
        (or change this path).  If the file is missing the site shows
