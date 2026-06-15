@@ -323,6 +323,22 @@ const DATA = {
       end:         "August 2021",
       description: "Developed a weakly-supervised GCN-based segmentation model for brain surface segmentation, mapping cortical data to the spectral domain to improve label-efficiency and spatial accuracy."
     }
+  ],
+
+  /* ─── Recommendations ────────────────────────────────────────────────── */
+  /* Each item: { name, designation, institution, linkedin, text, date }
+     Add an entry here after someone sends you their recommendation.
+     linkedin: full profile URL — visitors click it to verify the person. */
+  recommendations: [
+    /* Example — replace or remove:
+    {
+      name:        "Dr. Jane Smith",
+      designation: "Associate Professor, MIT CSAIL",
+      linkedin:    "https://www.linkedin.com/in/jane-smith/",
+      text:        "Soham is one of the most motivated and technically sharp engineers I have worked with. His ability to translate research ideas into robust systems is exceptional.",
+      date:        "June 2025"
+    }
+    */
   ]
 
 };

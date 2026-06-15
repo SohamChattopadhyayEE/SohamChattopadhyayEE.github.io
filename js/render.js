@@ -6,12 +6,13 @@
 /* ── Navbar ──────────────────────────────────────────────────────────── */
 function buildNav() {
   const pages = [
-    { label: "Home",         href: "index.html"        },
-    { label: "Biography",    href: "biography.html"    },
-    { label: "News",         href: "news.html"         },
-    { label: "Projects",     href: "projects.html"     },
-    { label: "Publications", href: "publications.html" },
-    { label: "Patents",      href: "patents.html"      },
+    { label: "Home",            href: "index.html"           },
+    { label: "Biography",       href: "biography.html"       },
+    { label: "News",            href: "news.html"            },
+    { label: "Projects",        href: "projects.html"        },
+    { label: "Publications",    href: "publications.html"    },
+    { label: "Patents",         href: "patents.html"         },
+    { label: "Recommendations", href: "recommendations.html" },
   ];
 
   const currentFile = location.pathname.split("/").pop() || "index.html";
@@ -193,6 +194,94 @@ function patentCard(item) {
       <p>${item.description || ""}</p>
       ${link}
     </div>`;
+}
+
+/* ── Recommendation card ──────────────────────────────────────────────── */
+function recommendationCard(item) {
+  return `
+    <div class="card rec-card">
+      <div class="rec-quote">&#8220;</div>
+      <p class="rec-text">${item.text}</p>
+      <div class="rec-footer">
+        <div class="rec-person">
+          <strong>${item.name}</strong>
+          <span class="rec-designation">${item.designation}</span>
+        </div>
+        <div class="rec-actions">
+          ${item.date ? `<span class="card-meta">${item.date}</span>` : ""}
+          ${item.linkedin ? `<a class="social-btn rec-linkedin-btn" href="${item.linkedin}" target="_blank" rel="noopener">${svgLinkedIn()} Profile</a>` : ""}
+        </div>
+      </div>
+    </div>`;
+}
+
+/* ── Recommendations full page ────────────────────────────────────────── */
+function buildRecommendationsPage() {
+  const listEl = document.getElementById("rec-list");
+  if (listEl) {
+    const items = DATA.recommendations || [];
+    if (items.length) {
+      listEl.innerHTML = `<div class="card-list">${items.map(recommendationCard).join("")}</div>`;
+    } else {
+      listEl.innerHTML = `<p class="empty-state">No recommendations yet — be the first to endorse Soham!</p>`;
+    }
+  }
+
+  /* Request form */
+  const formEl = document.getElementById("rec-request-form");
+  if (!formEl) return;
+
+  formEl.innerHTML = `
+    <div class="rec-request-box">
+      <h2 class="bio-block-title">Request a Recommendation</h2>
+      <p class="rec-request-intro">Know Soham professionally? Fill in the details below — clicking <em>Send Request</em> will open a pre-composed email in your mail client.</p>
+      <div class="rec-form-grid">
+        <div class="rec-form-group">
+          <label for="rec-name">Their name</label>
+          <input id="rec-name" type="text" placeholder="Dr. Jane Smith" />
+        </div>
+        <div class="rec-form-group">
+          <label for="rec-email">Their email</label>
+          <input id="rec-email" type="email" placeholder="jane@university.edu" />
+        </div>
+        <div class="rec-form-group">
+          <label for="rec-role">Their current designation</label>
+          <input id="rec-role" type="text" placeholder="Associate Professor, MIT" />
+        </div>
+      </div>
+      <button class="rec-send-btn" onclick="sendRecRequest()">Send Request &rarr;</button>
+    </div>`;
+}
+
+function sendRecRequest() {
+  const name  = document.getElementById("rec-name")?.value.trim()  || "there";
+  const email = document.getElementById("rec-email")?.value.trim() || "";
+  const role  = document.getElementById("rec-role")?.value.trim()  || "";
+  const p     = DATA.personal;
+
+  if (!email) { alert("Please enter the recipient's email address."); return; }
+
+  const subject = encodeURIComponent(`Recommendation Request — ${p.name}`);
+  const body    = encodeURIComponent(
+`Dear ${name},
+
+I hope this message finds you well.
+
+I am reaching out to kindly request a professional recommendation or endorsement from you for my academic portfolio website (${p.github ? p.github.replace("github.com/", "github.io/").replace("SohamChattopadhyayEE", "SohamChattopadhyayEE") : "my portfolio"}).
+
+If you are willing, a few sentences about your experience working with me — my technical skills, work ethic, or research aptitude — would mean a great deal, especially as I prepare my PhD applications for Fall 2027.
+
+Your recommendation will be displayed on my portfolio alongside your LinkedIn profile link and current designation (${role || "your designation"}).
+
+Please feel free to reach out if you have any questions.
+
+Thank you sincerely for your time and support.
+
+Best regards,
+${p.name}
+${p.email}`);
+
+  window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
 }
 
 /* ── Biography page builder ───────────────────────────────────────────── */

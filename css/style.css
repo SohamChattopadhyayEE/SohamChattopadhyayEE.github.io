@@ -528,6 +528,142 @@ main {
   .bio-card-left { flex: none; flex-direction: row; flex-wrap: wrap; gap: 0.5rem; }
 }
 
+/* ── Recommendations ────────────────────────────── */
+.rec-card {
+  position: relative;
+  padding-top: 1.4rem;
+}
+
+.rec-quote {
+  position: absolute;
+  top: 0.6rem;
+  left: 1rem;
+  font-size: 2.8rem;
+  line-height: 1;
+  color: var(--accent-light);
+  font-family: Georgia, serif;
+  user-select: none;
+}
+
+.rec-text {
+  font-size: 0.93rem;
+  color: var(--text);
+  line-height: 1.75;
+  font-style: italic;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+.rec-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+}
+
+.rec-person {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.rec-person strong {
+  font-size: 0.92rem;
+  color: var(--primary);
+}
+
+.rec-designation {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.rec-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.rec-linkedin-btn {
+  padding: 0.28rem 0.75rem;
+  font-size: 0.78rem;
+}
+
+/* Request form */
+.rec-request-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem 1.8rem;
+  box-shadow: var(--shadow);
+  margin-top: 2rem;
+}
+
+.rec-request-intro {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.rec-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+.rec-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.rec-form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rec-form-group input {
+  padding: 0.5rem 0.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color 0.18s;
+}
+
+.rec-form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #fff;
+}
+
+.rec-send-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.4rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.rec-send-btn:hover { background: var(--primary); }
+
 /* ── Footer ────────────────────────────────────── */
 footer {
   text-align: center;
