@@ -1,0 +1,35 @@
+name: Add Recommendation
+
+on:
+  repository_dispatch:
+    types: [new-recommendation]
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Append recommendation to data.js
+        env:
+          REC_NAME:        ${{ github.event.client_payload.name }}
+          REC_DESIGNATION: ${{ github.event.client_payload.designation }}
+          REC_LINKEDIN:    ${{ github.event.client_payload.linkedin }}
+          REC_TEXT:        ${{ github.event.client_payload.text }}
+          REC_DATE:        ${{ github.event.client_payload.date }}
+        run: node scripts/add-recommendation.js
+
+      - name: Commit and push
+        run: |
+          git config user.name  "Recommendation Bot"
+          git config user.email "bot@noreply.github.com"
+          git add js/data.js
+          git diff --staged --quiet || \
+            git commit -m "Add recommendation from ${{ github.event.client_payload.name }}" && \
+            git push
