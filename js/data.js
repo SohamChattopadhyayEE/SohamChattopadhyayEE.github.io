@@ -33,15 +33,16 @@ const DATA = {
     profilePic: "assets/profile.jpeg",
 
     /* Biography shown on the Home page */
-    bio: `I am a Robotics and Computer Vision Engineer with over four years of
-hands-on experience building autonomous systems, visual-inertial navigation
-pipelines, and deep-learning-based perception stacks. My work spans the full
-stack — from embedded sensor integration and hardware bring-up to ROS 2
-middleware, SLAM, and reinforcement-learning-based control for mobile robots.
+    bio: `I am a Research Engineer with over four years of 
+    experience in computer vision, reinforcement learning, and robot perception. 
+    My research spans mutli-view geometry, semantic segmentation, object detection 
+    and tracking, reinforcement learning, and efficient deployment through 
+    quantization and pruning.
 
-I am actively preparing to apply for a <strong>PhD in Fall 2027</strong>,
-with research interests centred on visual-inertial odometry, learning-based
-SLAM, and data-efficient robot learning in unstructured environments.`
+    I am an aspiring candidate for a full-time PhD position for fall 2027,
+    with research interests centred on various applications of computer vision, 
+    multi-modal learning and reinforcement learning, such as robot perception and learning-based
+    end-to-end control.`
   },
 
   /* ─── News ───────────────────────────────────────────────────────────── */
@@ -290,7 +291,18 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       role:        "Engineer — Computer Vision & Robotics",
       start:       "July 2022",
       end:         "January 2025",
-      description: "In Samsung R&D-Delhi, my role was to develop AI-related software for various Samsung products such as Samsung TV, Samsung robot Ballie (a home companion) and Robot Vacuum Cleaner (RVC). There I delivered two Reinforcement Learning-based software (in Python and PyTorch) to automatically find out and reproduce Memory leaks and User Interface reactivity delays respectively in Samsung TVs. Additionally, I also worked on devising a Deep Contextual-bandit based recommendation system for assigning KONA issues to their respective owners. Moreover, I also worked on developing various features of ballie (an automobile robot), which includes the 'follow-me' feature (This feature was demonstrated in IFA'24), writing the core managing module which establishes the communication between two different computation boards and the 'kidnap detection' feature. Along with that I also was a part of the core research team, where I worked on certain research projects like RL-based adaptive coverage planning for robot vacuum cleaner (RVC). Additionally, I also have worked on one Patent, which is under filing process."
+      description: `In Samsung R&D-Delhi, my role was to develop AI-related software for various 
+            Samsung products such as Samsung TV, Samsung robot Ballie (a home companion) and 
+            Robot Vacuum Cleaner (RVC). There I delivered two Reinforcement Learning-based 
+            software (in Python and PyTorch) to automatically find out and reproduce Memory leaks and User 
+            Interface reactivity delays respectively in Samsung TVs. Additionally, I also worked on devising 
+            a Deep Contextual-bandit based recommendation system for assigning KONA issues to their respective 
+            owners. Moreover, I also worked on developing various features of ballie (an automobile robot), 
+            which includes the 'follow-me' feature (This feature was demonstrated in IFA'24), writing the core 
+            managing module which establishes the communication between two different computation boards and the 
+            'kidnap detection' feature. Along with that I also was a part of the core research team, where I worked on 
+            certain research projects like RL-based adaptive coverage planning for robot vacuum cleaner (RVC). Additionally, 
+            I also have worked on one Patent, which is under filing process.`
     },
     {
       institution: "UiT — The Arctic University of Norway",
