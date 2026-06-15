@@ -68,7 +68,7 @@ SLAM, and data-efficient robot learning in unstructured environments.`
     },
     {
       date:        "February 2024",
-      title:       "Business trip to Samsung Research – Seoul",
+      title:       "On Business trip to Samsung Research – Seoul",
       description: "Travelled to Samsung Research headquarters in Seoul, South Korea, for a collaborative R&D engagement and knowledge exchange with the global research team.",
       link:        ""
     },
@@ -256,6 +256,59 @@ SLAM, and data-efficient robot learning in unstructured environments.`
       year:       "2024",
       description:"A system and method for detecting optimal surface for projection in multi-spectator environment.",
       link:       "https://drive.google.com/file/d/1k_DxLyOUV-oJzYu5Nluwau79dX54ZeK-/view?usp=sharing"
+    }
+  ],
+
+  /* ─── Education ──────────────────────────────────────────────────────── */
+  /* Each item: { degree, major, institution, location, start, end, grade } */
+  education: [
+    {
+      degree:      "Bachelor of Electrical Engineering, Honours",
+      major:       "Electrical Engineering",
+      institution: "Jadavpur University",
+      location:    "Kolkata, India",
+      start:       "2018",
+      end:         "May 2022",
+      grade:       "9.01 / 10 (A+)"
+    }
+  ],
+
+  /* ─── Experience ─────────────────────────────────────────────────────── */
+  /* Each item: { institution, location, role, start, end, supervisor?, description } */
+  experience: [
+    {
+      institution: "Addverb Technologies",
+      location:    "India",
+      role:        "Engineer — Computer Vision & Robotics",
+      start:       "February 2025",
+      end:         "Present",
+      description: "Building perception and autonomous navigation systems for warehouse AMRs — including a rotation-invariant contrastive autoencoder for LiDAR compression (100× faster scan matching, 20% CPU saving), an RL-based pallet-docking framework with 5 mm accuracy, and a multi-sensor fusion odometry pipeline combining Camera, LiDAR, IMU, and wheel encoders."
+    },
+    {
+      institution: "Samsung R&D – Delhi (Samsung Research Institute India)",
+      location:    "New Delhi, India",
+      role:        "Engineer — Computer Vision & Robotics",
+      start:       "July 2022",
+      end:         "January 2025",
+      description: "Led computer vision and robotics R&D for Samsung consumer robot products (Robot Vacuum Cleaner and Ballie), delivering an RL-based coverage strategy (+6% coverage), a vision-based Follow-me tracker (97% detection / 92% tracking accuracy), a depth-based probabilistic exploration module (−12% repetition), and a FARL-based automated UI-delay detector flagging 120+ issues daily."
+    },
+    {
+      institution: "UiT — The Arctic University of Norway",
+      location:    "Tromsø, Norway",
+      role:        "Undergraduate Research Intern",
+      supervisor:  "Dr. Dilip K. Prasad",
+      start:       "July 2020",
+      end:         "April 2021",
+      description: "Developed RRCNN, a 1D-CNN architecture for EEG-based motivation detection achieving 89% accuracy, and a deep learning pipeline for early-stage cardiac disease detection in Atlantic salmon embryos from video data (72% accuracy)."
+    },
+    {
+      institution: "École de Technologie Supérieure (ÉTS)",
+      location:    "Montréal, Canada",
+      role:        "MITACS Global Research Intern",
+      supervisor:  "Dr. Christian Desrosiers",
+      start:       "June 2021",
+      end:         "August 2021",
+      description: "Developed a weakly-supervised GCN-based segmentation model for brain surface segmentation, mapping cortical data to the spectral domain to improve label-efficiency and spatial accuracy."
     }
   ]
 

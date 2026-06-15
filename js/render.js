@@ -7,6 +7,7 @@
 function buildNav() {
   const pages = [
     { label: "Home",         href: "index.html"        },
+    { label: "Biography",    href: "biography.html"    },
     { label: "News",         href: "news.html"         },
     { label: "Projects",     href: "projects.html"     },
     { label: "Publications", href: "publications.html" },
@@ -188,6 +189,67 @@ function patentCard(item) {
       <p>${item.description || ""}</p>
       ${link}
     </div>`;
+}
+
+/* ── Biography page builder ───────────────────────────────────────────── */
+function buildBiographyPage() {
+  const p = DATA.personal;
+
+  /* Career Summary */
+  const summary = document.getElementById("bio-summary");
+  if (summary) {
+    summary.innerHTML = `
+      <div class="bio-section">
+        <h2>Career Summary</h2>
+        <p>${p.bio}</p>
+      </div>`;
+  }
+
+  /* Education */
+  const eduEl = document.getElementById("bio-education");
+  if (eduEl) {
+    const items = (DATA.education || []).map(e => `
+      <div class="bio-card">
+        <div class="bio-card-left">
+          <span class="bio-date">${e.start} – ${e.end}</span>
+          <span class="bio-location">${e.location}</span>
+        </div>
+        <div class="bio-card-right">
+          <h3>${e.degree}</h3>
+          <div class="bio-institution">${e.institution}</div>
+          <div class="bio-sub">Major: ${e.major}</div>
+          ${e.grade ? `<div class="bio-sub">Grade: <strong>${e.grade}</strong></div>` : ""}
+        </div>
+      </div>`).join("");
+    eduEl.innerHTML = `
+      <div class="bio-block">
+        <h2 class="bio-block-title">Education</h2>
+        ${items || "<p class='empty-state'>No education entries yet.</p>"}
+      </div>`;
+  }
+
+  /* Experience */
+  const expEl = document.getElementById("bio-experience");
+  if (expEl) {
+    const items = (DATA.experience || []).map(e => `
+      <div class="bio-card">
+        <div class="bio-card-left">
+          <span class="bio-date">${e.start} – ${e.end}</span>
+          <span class="bio-location">${e.location || ""}</span>
+          ${e.supervisor ? `<span class="bio-supervisor">Supervisor: ${e.supervisor}</span>` : ""}
+        </div>
+        <div class="bio-card-right">
+          <h3>${e.institution}</h3>
+          <div class="bio-role">${e.role}</div>
+          <p class="bio-desc">${e.description}</p>
+        </div>
+      </div>`).join("");
+    expEl.innerHTML = `
+      <div class="bio-block">
+        <h2 class="bio-block-title">Experience</h2>
+        ${items || "<p class='empty-state'>No experience entries yet.</p>"}
+      </div>`;
+  }
 }
 
 /* ── Helpers ──────────────────────────────────────────────────────────── */
