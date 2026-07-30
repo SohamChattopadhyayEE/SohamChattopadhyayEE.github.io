@@ -59,6 +59,12 @@ const DATA = {
      Set link: "" to omit the "Read more" button. */
   news: [
     {
+      date:        "May 2026",
+      title:       "Joined CVSSP Lab, University of Surrey as Researcher",
+      description: "Joined CVSSP lab at University of Surrey as a computer vision researcher, under the supervision of Prof. Yi-Zhe Song",
+      link:        ""
+    },
+    {
       date:        "February 2025",
       title:       "Joined Addverb Technologies as Research Engineer",
       description: "Joined Addverb Technologies, a leading robotics and warehouse automation company, as a Research Engineer focusing on perception and autonomous navigation for mobile robots.",
