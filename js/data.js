@@ -42,16 +42,20 @@ const DATA = {
     profilePic: "assets/profile.jpeg",
 
     /* Biography shown on the Home page */
-    bio: `I am a Research Engineer with over four years of 
-    experience in computer vision, reinforcement learning, and robot perception. 
-    My research spans mutli-view geometry, semantic segmentation, object detection 
-    and tracking, reinforcement learning, and efficient deployment through 
-    quantization and pruning.
+    bio: `I am a R&D Engineer with over four years of
+    experience in computer vision, reinforcement learning, and robot perception. I am currently
+    working at <a href="https://addverb.com/" target="_blank" rel="noopener noreferrer">Addverb Technologies</a>, India where I lead the 'Perception and Vision' team. I also
+    work as a researcher at the <a href="https://www.surrey.ac.uk/centre-vision-speech-signal-processing" target="_blank" rel="noopener noreferrer">CVSSP group</a> of the University of Surrey, United Kingdom, under
+    <a href="https://www.surrey.ac.uk/people/yi-zhe-song" target="_blank" rel="noopener noreferrer">Prof. Yi-Zhe Song</a>.
+    My own research spans 3D vision, sensor fusion, image generation, and vision-driven control,
+    with several systems deployed in production — including RL-based navigation, latent-space
+    localization, multi-sensor-based state estimation and so on.
 
-    I am an aspiring candidate for a full-time PhD position for fall 2027,
-    with research interests centred on various applications of computer vision, 
-    multi-modal learning and reinforcement learning, such as robot perception and learning-based
-    end-to-end control.`
+    Prior to joining Addverb, I worked at <a href="https://research.samsung.com/sri-d" target="_blank" rel="noopener noreferrer">Samsung Research - India</a> where I developed multiple
+    end-to-end Reinforcement Learning-based solutions for perception driven navigation for autonomous
+    robots, and software testing tools for Samsung TVs.
+
+    I completed my undergraduate studies in Electrical Engineering at <a href="https://jadavpuruniversity.in/" target="_blank" rel="noopener noreferrer">Jadavpur University</a>. `
   },
 
   /* ─── News ───────────────────────────────────────────────────────────── */
