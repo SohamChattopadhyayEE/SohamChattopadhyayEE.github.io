@@ -100,7 +100,7 @@ function buildHomeSection({ containerId, title, href, items, renderCard }) {
   if (!el) return;
 
   const cards = items.length
-    ? items.map(renderCard).join("")
+    ? items.map((item, i) => renderCard(item, i)).join("")
     : `<p class="empty-state">Nothing here yet — check back soon.</p>`;
 
   el.innerHTML = `
@@ -123,7 +123,7 @@ function buildFullList({ containerId, items, renderCard, emptyMsg }) {
     el.innerHTML = `<p class="empty-state">${emptyMsg || "Nothing here yet."}</p>`;
     return;
   }
-  el.innerHTML = `<div class="card-list">${items.map(renderCard).join("")}</div>`;
+  el.innerHTML = `<div class="card-list">${items.map((item, i) => renderCard(item, i)).join("")}</div>`;
 }
 
 /* ── Card renderers ───────────────────────────────────────────────────── */
@@ -140,26 +140,91 @@ function newsCard(item) {
     </div>`;
 }
 
-function projectCard(item) {
+function projectCard(item, idx) {
   const img = item.image
     ? `<img class="card-image" src="${item.image}" alt="${item.title}" loading="lazy"/>`
     : `<div class="card-image-placeholder">&#128187;</div>`;
 
   const link = item.link
-    ? `<a class="card-link" href="${item.link}" target="_blank" rel="noopener">View project &rarr;</a>`
+    ? `<a class="card-link" href="${item.link}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View project &rarr;</a>`
     : "";
 
   return `
-    <div class="card project-card">
+    <div class="card project-card" onclick="openProjectModal(${idx})" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjectModal(${idx})">
       <div class="project-card-image">${img}</div>
       <div class="project-card-body">
         <div class="card-meta">${item.date || ""}</div>
         <h3>${item.title}</h3>
-        <p>${item.description}</p>
+        <p class="card-desc-clamp">${item.description}</p>
         <div class="tags">${(item.tags || []).map(t => `<span class="tag">${t}</span>`).join("")}</div>
         ${link}
       </div>
     </div>`;
+}
+
+/* ── Project detail modal ─────────────────────────────────────────────── */
+function ensureProjectModalRoot() {
+  let root = document.getElementById("project-modal-root");
+  if (!root) {
+    root = document.createElement("div");
+    root.id = "project-modal-root";
+    document.body.appendChild(root);
+  }
+  return root;
+}
+
+function openProjectModal(idx) {
+  const item = (DATA.projects || [])[idx];
+  if (!item) return;
+
+  const isVideo = /\.(mp4|webm|mov)$/i.test(item.image || "");
+  const media = item.image
+    ? (isVideo
+        ? `<video class="project-modal-media-el" src="${item.image}" controls autoplay muted loop playsinline></video>`
+        : `<img class="project-modal-media-el" src="${item.image}" alt="${item.title}"/>`)
+    : "";
+
+  const link = item.link
+    ? `<a class="card-link" href="${item.link}" target="_blank" rel="noopener">View project &rarr;</a>`
+    : "";
+
+  const root = ensureProjectModalRoot();
+  root.innerHTML = `
+    <div class="project-modal-overlay" onclick="if(event.target===this) closeProjectModal()">
+      <div class="project-modal" role="dialog" aria-modal="true" aria-label="${item.title}">
+        <button class="project-modal-close" onclick="closeProjectModal()" aria-label="Close">&times;</button>
+        ${media ? `<div class="project-modal-media">${media}</div>` : ""}
+        <div class="project-modal-body">
+          <div class="card-meta">${item.date || ""}</div>
+          <h3>${item.title}</h3>
+          <p>${item.details || item.description}</p>
+          <div class="tags">${(item.tags || []).map(t => `<span class="tag">${t}</span>`).join("")}</div>
+          ${link}
+        </div>
+      </div>
+    </div>`;
+
+  requestAnimationFrame(() => {
+    root.querySelector(".project-modal-overlay").classList.add("open");
+  });
+  document.body.style.overflow = "hidden";
+  document.addEventListener("keydown", handleProjectModalKeydown);
+}
+
+function closeProjectModal() {
+  const overlay = document.querySelector(".project-modal-overlay");
+  if (!overlay) return;
+  overlay.classList.remove("open");
+  document.body.style.overflow = "";
+  document.removeEventListener("keydown", handleProjectModalKeydown);
+  setTimeout(() => {
+    const root = document.getElementById("project-modal-root");
+    if (root) root.innerHTML = "";
+  }, 220);
+}
+
+function handleProjectModalKeydown(e) {
+  if (e.key === "Escape") closeProjectModal();
 }
 
 function publicationCard(item) {

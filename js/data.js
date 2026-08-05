@@ -42,7 +42,7 @@ const DATA = {
     profilePic: "assets/profile.jpeg",
 
     /* Biography shown on the Home page */
-    bio: `I am a R&D Engineer with over four years of
+    bio: `I am an R&D Engineer with over four years of
     experience in computer vision, reinforcement learning, and robot perception. I am currently
     working at <a href="https://addverb.com/" target="_blank" rel="noopener noreferrer">Addverb Technologies</a>, India where I lead the 'Perception and Vision' team. I also
     work as a researcher at the <a href="https://www.surrey.ac.uk/centre-vision-speech-signal-processing" target="_blank" rel="noopener noreferrer">CVSSP group</a> of the University of Surrey, United Kingdom, under
