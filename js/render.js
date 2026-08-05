@@ -441,6 +441,18 @@ ${p.email}`);
   window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
 }
 
+/* ── Institution logo (Education / Experience cards) ──────────────────── */
+/* Tries assets/logos/<slug>.png, then .jpg, then .jpeg; hides itself if
+   none of those exist so a missing logo never shows a broken-image icon. */
+function logoImgTag(slug, alt) {
+  if (!slug) return "";
+  const base = `assets/logos/${slug}`;
+  return `<img class="bio-logo" src="${base}.png" alt="${alt} logo"
+    onerror="if(!this.dataset.step){this.dataset.step='1';this.src='${base}.jpg';}
+             else if(this.dataset.step==='1'){this.dataset.step='2';this.src='${base}.jpeg';}
+             else{this.style.display='none';}"/>`;
+}
+
 /* ── Biography page builder ───────────────────────────────────────────── */
 function buildBiographyPage() {
   const p = DATA.personal;
@@ -461,6 +473,7 @@ function buildBiographyPage() {
     const items = (DATA.education || []).map(e => `
       <div class="bio-card">
         <div class="bio-card-left">
+          ${logoImgTag(e.logo, e.institution)}
           <span class="bio-date">${e.start} – ${e.end}</span>
           <span class="bio-location">${e.location}</span>
         </div>
@@ -484,6 +497,7 @@ function buildBiographyPage() {
     const items = (DATA.experience || []).map(e => `
       <div class="bio-card">
         <div class="bio-card-left">
+          ${logoImgTag(e.logo, e.institution)}
           <span class="bio-date">${e.start} – ${e.end}</span>
           <span class="bio-location">${e.location || ""}</span>
           ${e.supervisor ? `<span class="bio-supervisor">Supervisor: ${e.supervisor}</span>` : ""}

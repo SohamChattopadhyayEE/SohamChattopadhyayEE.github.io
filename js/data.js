@@ -280,7 +280,9 @@ const DATA = {
   ],
 
   /* ─── Education ──────────────────────────────────────────────────────── */
-  /* Each item: { degree, major, institution, location, start, end, grade } */
+  /* Each item: { degree, major, institution, location, start, end, grade, logo }
+     logo: base filename (no extension) of a logo image placed in assets/logos/
+     (tries .png, then .jpg, then .jpeg; omit or leave blank to show no logo). */
   education: [
     {
       degree:      "Bachelor of Electrical Engineering, Honours",
@@ -289,12 +291,15 @@ const DATA = {
       location:    "Kolkata, India",
       start:       "2018",
       end:         "May 2022",
-      grade:       "9.01 / 10 (A+)"
+      grade:       "9.01 / 10 (A+)",
+      logo:        "jadavpur"
     }
   ],
 
   /* ─── Experience ─────────────────────────────────────────────────────── */
-  /* Each item: { institution, location, role, start, end, supervisor?, description } */
+  /* Each item: { institution, location, role, start, end, supervisor?, description, logo }
+     logo: base filename (no extension) of a logo image placed in assets/logos/
+     (tries .png, then .jpg, then .jpeg; omit or leave blank to show no logo). */
   experience: [
     {
       institution: "Addverb Technologies",
@@ -302,6 +307,7 @@ const DATA = {
       role:        "Engineer — Computer Vision & Robotics",
       start:       "February 2025",
       end:         "Present",
+      logo:        "addverb",
       description: "I am currently working at Addverb as a robotics software engineer, primarily focusing on developing AI-based solutions for robot-perception. My work involves fusing multi-modal sensor data (LiDAR, Camera, IMU and Wheel encoder) for SLAM and mapping, and creating AI software to enable autonomous navigation, obstacle avoidance, and scene understanding. My primary responsibility includes reading and understanding various research papers across fields like Reinforcement Learning, Generative AI, Scene Segmentation, Object detection, followed by quick prototyping and evaluating on robots. Moreover, I also have to design low-level software architecture, optimize code performance and write production ready clean code (primarily in C++)."
     },
     {
@@ -310,6 +316,7 @@ const DATA = {
       role:        "Engineer — Computer Vision & Robotics",
       start:       "July 2022",
       end:         "January 2025",
+      logo:        "samsung",
       description: `In Samsung R&D-Delhi, my role was to develop AI-related software for various 
             Samsung products such as Samsung TV, Samsung robot Ballie (a home companion) and 
             Robot Vacuum Cleaner (RVC). There I delivered two Reinforcement Learning-based 
@@ -330,6 +337,7 @@ const DATA = {
       supervisor:  "Dr. Dilip K. Prasad",
       start:       "July 2020",
       end:         "April 2021",
+      logo:        "uit",
       description: "Developed RRCNN, a 1D-CNN architecture for EEG-based motivation detection achieving 89% accuracy, and a deep learning pipeline for early-stage cardiac disease detection in Atlantic salmon embryos from video data (72% accuracy)."
     },
     {
@@ -339,6 +347,7 @@ const DATA = {
       supervisor:  "Dr. Christian Desrosiers",
       start:       "June 2021",
       end:         "August 2021",
+      logo:        "ets",
       description: "Developed a weakly-supervised GCN-based segmentation model for brain surface segmentation, mapping cortical data to the spectral domain to improve label-efficiency and spatial accuracy."
     }
   ],
