@@ -67,9 +67,11 @@ function buildProfile() {
           class="profile-photo"
           src="${p.profilePic}"
           alt="${p.name}"
+          onclick="openProfilePhotoModal()"
+          role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProfilePhotoModal()"
           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
         />
-        <div class="profile-monogram" style="display:none;">${initials(p.name)}</div>
+        <div class="profile-monogram" style="display:none;" onclick="openProfilePhotoModal()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProfilePhotoModal()">${initials(p.name)}</div>
       </div>
       <h1>${p.name}</h1>
       <p class="title">${p.title}</p>
@@ -127,15 +129,15 @@ function buildFullList({ containerId, items, renderCard, emptyMsg }) {
 }
 
 /* ── Card renderers ───────────────────────────────────────────────────── */
-function newsCard(item) {
+function newsCard(item, idx) {
   const link = item.link
-    ? `<a class="card-link" href="${item.link}" target="_blank" rel="noopener">Read more &rarr;</a>`
+    ? `<a class="card-link" href="${item.link}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Read more &rarr;</a>`
     : "";
   return `
-    <div class="card">
+    <div class="card card-clickable" onclick="openDetailModal('news', ${idx})" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openDetailModal('news', ${idx})">
       <div class="card-meta">${item.date}</div>
       <h3>${item.title}</h3>
-      <p>${item.description}</p>
+      <p class="card-desc-clamp">${item.description}</p>
       ${link}
     </div>`;
 }
@@ -150,7 +152,7 @@ function projectCard(item, idx) {
     : "";
 
   return `
-    <div class="card project-card" onclick="openProjectModal(${idx})" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProjectModal(${idx})">
+    <div class="card project-card card-clickable" onclick="openDetailModal('projects', ${idx})" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openDetailModal('projects', ${idx})">
       <div class="project-card-image">${img}</div>
       <div class="project-card-body">
         <div class="card-meta">${item.date || ""}</div>
@@ -162,7 +164,41 @@ function projectCard(item, idx) {
     </div>`;
 }
 
-/* ── Project detail modal ─────────────────────────────────────────────── */
+function publicationCard(item, idx) {
+  const badge = item.type
+    ? `<span class="type-badge ${item.type}">${item.type}</span>`
+    : "";
+  const link = item.link
+    ? `<a class="card-link" href="${item.link}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View paper &rarr;</a>`
+    : "";
+  return `
+    <div class="card card-clickable" onclick="openDetailModal('publications', ${idx})" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openDetailModal('publications', ${idx})">
+      ${badge}
+      <h3>${item.title}</h3>
+      <div class="card-meta">${item.authors} &mdash; ${item.venue} (${item.year})</div>
+      <p class="card-desc-clamp">${item.abstract || ""}</p>
+      ${link}
+    </div>`;
+}
+
+function patentCard(item, idx) {
+  const status = item.status
+    ? `<span class="type-badge ${item.status.toLowerCase()}">${item.status}</span>`
+    : "";
+  const link = item.link
+    ? `<a class="card-link" href="${item.link}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View patent &rarr;</a>`
+    : "";
+  return `
+    <div class="card card-clickable" onclick="openDetailModal('patents', ${idx})" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openDetailModal('patents', ${idx})">
+      ${status}
+      <h3>${item.title}</h3>
+      <div class="card-meta">${item.inventors} &mdash; ${item.number} (${item.year})</div>
+      <p class="card-desc-clamp">${item.description || ""}</p>
+      ${link}
+    </div>`;
+}
+
+/* ── Shared detail modal (news / projects / publications / patents) ────── */
 function ensureProjectModalRoot() {
   let root = document.getElementById("project-modal-root");
   if (!root) {
@@ -173,33 +209,132 @@ function ensureProjectModalRoot() {
   return root;
 }
 
-function openProjectModal(idx) {
-  const item = (DATA.projects || [])[idx];
-  if (!item) return;
+function buildModalMedia(kind, item) {
+  if (kind !== "projects" || !item.image) return "";
+  const isVideo = /\.(mp4|webm|mov)$/i.test(item.image);
+  const el = isVideo
+    ? `<video class="project-modal-media-el" src="${item.image}" controls autoplay muted loop playsinline></video>`
+    : `<img class="project-modal-media-el" src="${item.image}" alt="${item.title}"/>`;
+  return `<div class="project-modal-media">${el}</div>`;
+}
 
-  const isVideo = /\.(mp4|webm|mov)$/i.test(item.image || "");
-  const media = item.image
-    ? (isVideo
-        ? `<video class="project-modal-media-el" src="${item.image}" controls autoplay muted loop playsinline></video>`
-        : `<img class="project-modal-media-el" src="${item.image}" alt="${item.title}"/>`)
-    : "";
+function buildModalBody(kind, item) {
+  const text = item.details || item.description || item.abstract || "";
 
+  if (kind === "news") {
+    const link = item.link
+      ? `<a class="card-link" href="${item.link}" target="_blank" rel="noopener">Read more &rarr;</a>`
+      : "";
+    return `
+      <div class="project-modal-body">
+        <div class="card-meta">${item.date || ""}</div>
+        <h3>${item.title}</h3>
+        <p>${text}</p>
+        ${link}
+      </div>`;
+  }
+
+  if (kind === "publications") {
+    const badge = item.type
+      ? `<span class="type-badge ${item.type}">${item.type}</span>`
+      : "";
+    const link = item.link
+      ? `<a class="card-link" href="${item.link}" target="_blank" rel="noopener">View paper &rarr;</a>`
+      : "";
+    return `
+      <div class="project-modal-body">
+        ${badge}
+        <h3>${item.title}</h3>
+        <div class="card-meta">${item.authors} &mdash; ${item.venue} (${item.year})</div>
+        <p>${text}</p>
+        ${link}
+      </div>`;
+  }
+
+  if (kind === "patents") {
+    const badge = item.status
+      ? `<span class="type-badge ${item.status.toLowerCase()}">${item.status}</span>`
+      : "";
+    const link = item.link
+      ? `<a class="card-link" href="${item.link}" target="_blank" rel="noopener">View patent &rarr;</a>`
+      : "";
+    return `
+      <div class="project-modal-body">
+        ${badge}
+        <h3>${item.title}</h3>
+        <div class="card-meta">${item.inventors} &mdash; ${item.number} (${item.year})</div>
+        <p>${text}</p>
+        ${link}
+      </div>`;
+  }
+
+  /* projects (default) */
   const link = item.link
     ? `<a class="card-link" href="${item.link}" target="_blank" rel="noopener">View project &rarr;</a>`
     : "";
+  return `
+    <div class="project-modal-body">
+      <div class="card-meta">${item.date || ""}</div>
+      <h3>${item.title}</h3>
+      <p>${text}</p>
+      <div class="tags">${(item.tags || []).map(t => `<span class="tag">${t}</span>`).join("")}</div>
+      ${link}
+    </div>`;
+}
+
+function openDetailModal(kind, idx) {
+  const item = (DATA[kind] || [])[idx];
+  if (!item) return;
 
   const root = ensureProjectModalRoot();
   root.innerHTML = `
-    <div class="project-modal-overlay" onclick="if(event.target===this) closeProjectModal()">
+    <div class="project-modal-overlay" onclick="if(event.target===this) closeDetailModal()">
       <div class="project-modal" role="dialog" aria-modal="true" aria-label="${item.title}">
-        <button class="project-modal-close" onclick="closeProjectModal()" aria-label="Close">&times;</button>
-        ${media ? `<div class="project-modal-media">${media}</div>` : ""}
-        <div class="project-modal-body">
-          <div class="card-meta">${item.date || ""}</div>
-          <h3>${item.title}</h3>
-          <p>${item.details || item.description}</p>
-          <div class="tags">${(item.tags || []).map(t => `<span class="tag">${t}</span>`).join("")}</div>
-          ${link}
+        <button class="project-modal-close" onclick="closeDetailModal()" aria-label="Close">&times;</button>
+        ${buildModalMedia(kind, item)}
+        ${buildModalBody(kind, item)}
+      </div>
+    </div>`;
+
+  requestAnimationFrame(() => {
+    root.querySelector(".project-modal-overlay").classList.add("open");
+  });
+  document.body.style.overflow = "hidden";
+  document.addEventListener("keydown", handleDetailModalKeydown);
+}
+
+function closeDetailModal() {
+  const overlay = document.querySelector(".project-modal-overlay");
+  if (!overlay) return;
+  overlay.classList.remove("open");
+  document.body.style.overflow = "";
+  document.removeEventListener("keydown", handleDetailModalKeydown);
+  setTimeout(() => {
+    const root = document.getElementById("project-modal-root");
+    if (root) root.innerHTML = "";
+  }, 220);
+}
+
+function handleDetailModalKeydown(e) {
+  if (e.key === "Escape") closeDetailModal();
+}
+
+/* ── Profile photo modal ─────────────────────────────────────────────── */
+function openProfilePhotoModal() {
+  const p = DATA.personal;
+  const media = p.profilePic
+    ? `<img class="project-modal-media-el profile-modal-photo" src="${p.profilePic}" alt="${p.name}"/>`
+    : `<div class="profile-modal-monogram">${initials(p.name)}</div>`;
+
+  const root = ensureProjectModalRoot();
+  root.innerHTML = `
+    <div class="project-modal-overlay" onclick="if(event.target===this) closeDetailModal()">
+      <div class="project-modal profile-modal" role="dialog" aria-modal="true" aria-label="${p.name}">
+        <button class="project-modal-close" onclick="closeDetailModal()" aria-label="Close">&times;</button>
+        <div class="project-modal-media profile-modal-media">${media}</div>
+        <div class="project-modal-body profile-modal-body">
+          <h3>${p.name}</h3>
+          <p>${p.title}</p>
         </div>
       </div>
     </div>`;
@@ -208,57 +343,7 @@ function openProjectModal(idx) {
     root.querySelector(".project-modal-overlay").classList.add("open");
   });
   document.body.style.overflow = "hidden";
-  document.addEventListener("keydown", handleProjectModalKeydown);
-}
-
-function closeProjectModal() {
-  const overlay = document.querySelector(".project-modal-overlay");
-  if (!overlay) return;
-  overlay.classList.remove("open");
-  document.body.style.overflow = "";
-  document.removeEventListener("keydown", handleProjectModalKeydown);
-  setTimeout(() => {
-    const root = document.getElementById("project-modal-root");
-    if (root) root.innerHTML = "";
-  }, 220);
-}
-
-function handleProjectModalKeydown(e) {
-  if (e.key === "Escape") closeProjectModal();
-}
-
-function publicationCard(item) {
-  const badge = item.type
-    ? `<span class="type-badge ${item.type}">${item.type}</span>`
-    : "";
-  const link = item.link
-    ? `<a class="card-link" href="${item.link}" target="_blank" rel="noopener">View paper &rarr;</a>`
-    : "";
-  return `
-    <div class="card">
-      ${badge}
-      <h3>${item.title}</h3>
-      <div class="card-meta">${item.authors} &mdash; ${item.venue} (${item.year})</div>
-      <p>${item.abstract || ""}</p>
-      ${link}
-    </div>`;
-}
-
-function patentCard(item) {
-  const status = item.status
-    ? `<span class="type-badge ${item.status.toLowerCase()}">${item.status}</span>`
-    : "";
-  const link = item.link
-    ? `<a class="card-link" href="${item.link}" target="_blank" rel="noopener">View patent &rarr;</a>`
-    : "";
-  return `
-    <div class="card">
-      ${status}
-      <h3>${item.title}</h3>
-      <div class="card-meta">${item.inventors} &mdash; ${item.number} (${item.year})</div>
-      <p>${item.description || ""}</p>
-      ${link}
-    </div>`;
+  document.addEventListener("keydown", handleDetailModalKeydown);
 }
 
 /* ── Recommendation card ──────────────────────────────────────────────── */
