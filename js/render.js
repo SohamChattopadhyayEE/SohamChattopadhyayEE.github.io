@@ -96,6 +96,42 @@ function buildBio() {
   `;
 }
 
+/* ── Career summary timeline (home page only) ─────────────────────────── */
+function careerLogoTag(slug, name) {
+  const label = initials(name);
+  if (!slug) return `<div class="ct-logo ct-logo-placeholder">${label}</div>`;
+  const base = `assets/logos/${slug}`;
+  return `
+    <img class="ct-logo" src="${base}.png" alt="${name} logo"
+      onerror="if(!this.dataset.step){this.dataset.step='1';this.src='${base}.jpg';}
+               else if(this.dataset.step==='1'){this.dataset.step='2';this.src='${base}.jpeg';}
+               else{this.style.display='none'; this.nextElementSibling.style.display='flex';}"/>
+    <div class="ct-logo ct-logo-placeholder" style="display:none;">${label}</div>`;
+}
+
+function buildCareerTimeline() {
+  const el = document.getElementById("career-timeline");
+  if (!el) return;
+  const items = DATA.careerTimeline || [];
+  if (!items.length) { el.innerHTML = ""; return; }
+
+  const row = items.map(item => `
+    <div class="ct-item">
+      ${careerLogoTag(item.logo, item.name)}
+      <div class="ct-role">${item.role}</div>
+      <div class="ct-name">${item.name}</div>
+      <div class="ct-dates">${item.dates}</div>
+    </div>
+  `).join("");
+
+  el.innerHTML = `
+    <div class="career-timeline">
+      <h2><a href="biography.html#bio-experience">Experience</a></h2>
+      <div class="career-timeline-row">${row}</div>
+    </div>
+  `;
+}
+
 /* ── Home preview sections ────────────────────────────────────────────── */
 function buildHomeSection({ containerId, title, href, items, renderCard }) {
   const el = document.getElementById(containerId);

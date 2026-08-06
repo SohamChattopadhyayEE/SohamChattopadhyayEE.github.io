@@ -264,6 +264,97 @@ main {
   text-decoration: underline;
 }
 
+/* ── Career summary timeline (home page) ───────── */
+.career-timeline {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.7rem 1.7rem;
+  margin-bottom: 1.8rem;
+  box-shadow: var(--shadow);
+}
+
+.career-timeline h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-light);
+}
+
+.career-timeline h2 a {
+  color: var(--primary);
+}
+
+.career-timeline h2 a:hover {
+  text-decoration: underline;
+}
+
+.career-timeline-row {
+  --ct-logo-size: 88px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+}
+
+.ct-item {
+  flex: 0 0 auto;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ct-logo {
+  width: var(--ct-logo-size);
+  height: var(--ct-logo-size);
+  border-radius: 10px;
+  object-fit: contain;
+  background: transparent;
+  border: 1px solid var(--border);
+  margin-bottom: 0.6rem;
+}
+
+.ct-logo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+}
+
+.ct-role {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1.35;
+}
+
+.ct-name {
+  font-size: 0.75rem;
+  color: var(--text);
+  margin-top: 0.2rem;
+  line-height: 1.35;
+}
+
+.ct-dates {
+  font-size: 0.74rem;
+  color: var(--muted);
+  font-weight: 600;
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 640px) {
+  .ct-item { width: 100px; }
+}
+
 /* ── Home preview sections ─────────────────────── */
 .home-section {
   background: var(--surface);

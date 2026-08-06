@@ -352,6 +352,18 @@ const DATA = {
     }
   ],
 
+  /* ─── Career Timeline (home page strip, left = most recent) ───────────── */
+  /* Each item: { logo, role, name, dates }
+     logo: base filename (no extension) of a logo image in assets/logos/
+     (tries .png, then .jpg, then .jpeg; shows institution initials if none found). */
+  careerTimeline: [
+    { logo: "addverb",  role: "Computer Vision & Robotics Engineer", name: "Addverb Technologies",                  dates: "2025 – Present" },
+    { logo: "samsung",  role: "Computer Vision & Robotics Engineer", name: "Samsung R&D – Delhi",                   dates: "2022 – 2025"    },
+    { logo: "ets",      role: "MITACS Research Intern",              name: "École de Technologie Supérieure (ÉTS)", dates: "2021"            },
+    { logo: "uit",      role: "Undergraduate Research Intern",       name: "UiT — The Arctic University of Norway", dates: "2020 – 2021"    },
+    { logo: "jadavpur", role: "B.E. Electrical Engineering",         name: "Jadavpur University",                   dates: "2018 – 2022"    }
+  ],
+
   /* ─── Recommendations ────────────────────────────────────────────────── */
   /* Each item: { name, designation, institution, linkedin, text, date }
      Add an entry here after someone sends you their recommendation.
