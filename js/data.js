@@ -302,6 +302,16 @@ const DATA = {
      (tries .png, then .jpg, then .jpeg; omit or leave blank to show no logo). */
   experience: [
     {
+      institution: "CVSSP, University of Surrey",
+      location:    "Guildford, United Kingdom",
+      role:        "Researcher",
+      supervisor:  "Prof. Yi-Zhe Song",
+      start:       "May 2026",
+      end:         "Present",
+      logo:        "surrey",
+      description: "Conducting research at the CVSSP group of the University of Surrey, working on topics spanning 3D vision, sensor fusion, image generation, and vision-driven control."
+    },
+    {
       institution: "Addverb Technologies",
       location:    "India",
       role:        "Engineer — Computer Vision & Robotics",
@@ -357,6 +367,7 @@ const DATA = {
      logo: base filename (no extension) of a logo image in assets/logos/
      (tries .png, then .jpg, then .jpeg; shows institution initials if none found). */
   careerTimeline: [
+    { logo: "surrey",   role: "Researcher",                          name: "University of Surrey",                  dates: "2026 – Present" },
     { logo: "addverb",  role: "Computer Vision & Robotics Engineer", name: "Addverb Technologies",                  dates: "2025 – Present" },
     { logo: "samsung",  role: "Computer Vision & Robotics Engineer", name: "Samsung R&D – Delhi",                   dates: "2022 – 2025"    },
     { logo: "ets",      role: "MITACS Research Intern",              name: "École de Technologie Supérieure (ÉTS)", dates: "2021"            },
