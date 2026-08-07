@@ -289,7 +289,7 @@ const DATA = {
       major:       "Electrical Engineering",
       institution: "Jadavpur University",
       location:    "Kolkata, India",
-      start:       "2018",
+      start:       "Aug 2018",
       end:         "May 2022",
       grade:       "9.01 / 10 (A+)",
       logo:        "jadavpur"
@@ -303,13 +303,16 @@ const DATA = {
   experience: [
     {
       institution: "CVSSP, University of Surrey",
-      location:    "Guildford, United Kingdom",
+      location:    "United Kingdom",
       role:        "Researcher",
       supervisor:  "Prof. Yi-Zhe Song",
       start:       "May 2026",
       end:         "Present",
       logo:        "surrey",
-      description: "Conducting research at the CVSSP group of the University of Surrey, working on topics spanning 3D vision, sensor fusion, image generation, and vision-driven control."
+      description: `I am working in SketchX lab as a researcher. My work primarily involves doing
+                    research around muli-modal image generation using VLMs and diffusion models. My
+                    current project presents a RLFT (GRPO) trained planner VLM and a SFT-trained drawer 
+                    VLM trained to plan and iteratively draw sketches, and modify them based on human feedbacks.`
     },
     {
       institution: "Addverb Technologies",
