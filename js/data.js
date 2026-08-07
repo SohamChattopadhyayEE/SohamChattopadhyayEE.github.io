@@ -316,9 +316,9 @@ const DATA = {
     },
     {
       institution: "Addverb Technologies",
-      location:    "India",
+      location:    "Delhi, India",
       role:        "Engineer — Computer Vision & Robotics",
-      start:       "February 2025",
+      start:       "Feb 2025",
       end:         "Present",
       logo:        "addverb",
       description: "I am currently working at Addverb as a robotics software engineer, primarily focusing on developing AI-based solutions for robot-perception. My work involves fusing multi-modal sensor data (LiDAR, Camera, IMU and Wheel encoder) for SLAM and mapping, and creating AI software to enable autonomous navigation, obstacle avoidance, and scene understanding. My primary responsibility includes reading and understanding various research papers across fields like Reinforcement Learning, Generative AI, Scene Segmentation, Object detection, followed by quick prototyping and evaluating on robots. Moreover, I also have to design low-level software architecture, optimize code performance and write production ready clean code (primarily in C++)."
@@ -327,8 +327,8 @@ const DATA = {
       institution: "Samsung R&D – Delhi (Samsung Research Institute India)",
       location:    "New Delhi, India",
       role:        "Engineer — Computer Vision & Robotics",
-      start:       "July 2022",
-      end:         "January 2025",
+      start:       "Jul 2022",
+      end:         "Jan 2025",
       logo:        "samsung",
       description: `In Samsung R&D-Delhi, my role was to develop AI-related software for various 
             Samsung products such as Samsung TV, Samsung robot Ballie (a home companion) and 
@@ -347,9 +347,9 @@ const DATA = {
       institution: "UiT — The Arctic University of Norway",
       location:    "Tromsø, Norway",
       role:        "Undergraduate Research Intern",
-      supervisor:  "Dr. Dilip K. Prasad",
-      start:       "July 2020",
-      end:         "April 2021",
+      supervisor:  "Prof. Dilip K. Prasad",
+      start:       "Jul 2020",
+      end:         "Apr 2021",
       logo:        "uit",
       description: "Developed RRCNN, a 1D-CNN architecture for EEG-based motivation detection achieving 89% accuracy, and a deep learning pipeline for early-stage cardiac disease detection in Atlantic salmon embryos from video data (72% accuracy)."
     },
@@ -357,9 +357,9 @@ const DATA = {
       institution: "École de Technologie Supérieure (ÉTS)",
       location:    "Montréal, Canada",
       role:        "MITACS Global Research Intern",
-      supervisor:  "Dr. Christian Desrosiers",
-      start:       "June 2021",
-      end:         "August 2021",
+      supervisor:  "Prof. Christian Desrosiers",
+      start:       "Jun 2021",
+      end:         "Aug 2021",
       logo:        "ets",
       description: "Developed a weakly-supervised GCN-based segmentation model for brain surface segmentation, mapping cortical data to the spectral domain to improve label-efficiency and spatial accuracy."
     }
