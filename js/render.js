@@ -91,7 +91,7 @@ function buildBio() {
         <h2 style="font-size:1.05rem; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:0.07em;">Biography</h2>
         <a class="view-all-link" href="biography.html">More &rarr;</a>
       </div>
-      <p>${DATA.personal.bio}</p>
+      ${DATA.personal.bio.map(para => `<p>${para}</p>`).join("")}
     </div>
   `;
 }
@@ -499,7 +499,7 @@ function buildBiographyPage() {
     summary.innerHTML = `
       <div class="bio-section">
         <h2>Career Summary</h2>
-        <p>${p.bio}</p>
+        ${p.bio.map(para => `<p>${para}</p>`).join("")}
       </div>`;
   }
 
