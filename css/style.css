@@ -439,6 +439,16 @@ main {
   margin-bottom: 0.3rem;
 }
 
+.news-date {
+  font-size: 0.76rem;
+  color: #1a3b6d;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: underline;
+  margin-bottom: 0.3rem;
+}
+
 .card h3 {
   font-size: 0.97rem;
   font-weight: 700;

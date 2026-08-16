@@ -171,7 +171,7 @@ function newsCard(item, idx) {
     : "";
   return `
     <div class="card card-clickable" onclick="openDetailModal('news', ${idx})" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openDetailModal('news', ${idx})">
-      <div class="card-meta">${item.date}</div>
+      <div class="news-date">${item.date}</div>
       <h3>${item.title}</h3>
       <p class="card-desc-clamp">${item.description}</p>
       ${link}
@@ -263,7 +263,7 @@ function buildModalBody(kind, item) {
       : "";
     return `
       <div class="project-modal-body">
-        <div class="card-meta">${item.date || ""}</div>
+        <div class="news-date">${item.date || ""}</div>
         <h3>${item.title}</h3>
         <p>${text}</p>
         ${link}

@@ -39,7 +39,7 @@ const DATA = {
     /* Profile picture: place your photo at assets/profile.jpg
        (or change this path).  If the file is missing the site shows
        a monogram avatar automatically. */
-    profilePic: "assets/profile.jpeg",
+    profilePic: "assets/profile.jpg",
 
     /* Biography shown on the Home page — one string per paragraph */
     bio: [
