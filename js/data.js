@@ -18,7 +18,7 @@ const DATA = {
   personal: {
     name:       "Soham Chattopadhyay",
     title:      "Robotics & Computer Vision Researcher",
-    subtitle:   "PhD Aspirant · Fall 2027",
+    subtitle:   "PhD Aspirant · Spring / Fall 2027",
     email:      "c.soham99.official@gmail.com",
 
     /* Social / profile links — set to "" to hide the button */
