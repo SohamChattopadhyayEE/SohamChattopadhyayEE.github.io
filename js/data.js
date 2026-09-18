@@ -125,6 +125,14 @@ const DATA = {
       image:       "assets/projects/atlanta-original-compressed.gif"
     },
     {
+      title:       "3D Scene Graph-based SLAM",
+      date:        "2026",
+      description: "Developed a 3D Scene Graph-based SLAM system that predicts depth, estimates odometry and performs object-level localization and mapping",
+      tags:        ["Computer Vision", "3D-reconstruction", "Python", "C++"],
+      link:        "",
+      image:       "assets/projects/demo_room_mapping.gif"
+    },
+    {
       title:       "Simulator Development for RL-based Navigation Task",
       date:        "2026",
       description: "Developed a light-weight simulator for RL-based training which leverages the physics of Mujoco environment and can be integrated seamlessly with Stable-baseline3 library",
