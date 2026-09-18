@@ -200,6 +200,74 @@ function projectCard(item, idx) {
     </div>`;
 }
 
+/* ── Projects carousel (home page only) ───────────────────────────────── */
+function scrollProjectsCarousel(dir) {
+  const viewport = document.querySelector("#projects-preview .pc-viewport");
+  if (!viewport) return;
+  const item = viewport.querySelector(".pc-item");
+  const step = item ? item.getBoundingClientRect().width : viewport.clientWidth / 3;
+  viewport.scrollBy({ left: dir * step, behavior: "smooth" });
+}
+
+function buildProjectsCarousel() {
+  const el = document.getElementById("projects-preview");
+  if (!el) return;
+  const items = DATA.projects || [];
+
+  if (!items.length) {
+    el.innerHTML = `
+      <div class="home-section">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <a class="view-all-link" href="projects.html">View all &rarr;</a>
+        </div>
+        <p class="empty-state">Nothing here yet — check back soon.</p>
+      </div>`;
+    return;
+  }
+
+  const showNav = items.length > 3;
+
+  const itemsHtml = items.map((item, i) => {
+    const media = item.image
+      ? `<img class="pc-media-el" src="${item.image}" alt="${item.title}" loading="lazy"/>`
+      : `<div class="pc-media-el pc-media-placeholder">&#128187;</div>`;
+    return `
+      <div class="pc-item card-clickable" onclick="openDetailModal('projects', ${i})" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openDetailModal('projects', ${i})">
+        <div class="pc-media">${media}</div>
+        <div class="pc-caption">${item.title}</div>
+      </div>`;
+  }).join("");
+
+  el.innerHTML = `
+    <div class="home-section">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <a class="view-all-link" href="projects.html">View all &rarr;</a>
+      </div>
+      <div class="pc-wrap">
+        ${showNav ? `<button class="pc-nav pc-nav-left" onclick="scrollProjectsCarousel(-1)" aria-label="Previous project">&#8249;</button>` : ""}
+        <div class="pc-viewport" id="pc-viewport">
+          <div class="pc-track">${itemsHtml}</div>
+        </div>
+        ${showNav ? `<button class="pc-nav pc-nav-right" onclick="scrollProjectsCarousel(1)" aria-label="Next project">&#8250;</button>` : ""}
+      </div>
+    </div>`;
+
+  if (showNav) {
+    const viewport = document.getElementById("pc-viewport");
+    const leftBtn = el.querySelector(".pc-nav-left");
+    const rightBtn = el.querySelector(".pc-nav-right");
+    const updateNavState = () => {
+      const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+      leftBtn.disabled = viewport.scrollLeft <= 1;
+      rightBtn.disabled = viewport.scrollLeft >= maxScroll - 1;
+    };
+    viewport.addEventListener("scroll", updateNavState);
+    updateNavState();
+  }
+}
+
 function publicationCard(item, idx) {
   const badge = item.type
     ? `<span class="type-badge ${item.type}">${item.type}</span>`
